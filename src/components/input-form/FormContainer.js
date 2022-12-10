@@ -1,5 +1,5 @@
 import InputContainer from "./InputContainer";
-import FormHeading from "./heading/FormHeading";
+import FormHeading from "./FormHeading";
 
 function FormContainer() {
   return (

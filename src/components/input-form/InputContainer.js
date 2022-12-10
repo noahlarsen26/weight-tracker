@@ -1,6 +1,6 @@
 import FirstName from "./inputs/name/FirstName";
 import LastName from "./inputs/name/LastName";
-import PresentWeight from "./inputs/weight/PresentWeight";
+import StartingWeight from "./inputs/weight/StartingWeight";
 import EndGoalWeight from "./inputs/goals/EndGoalWeight";
 import EndGoalDate from "./inputs/goals/EndGoalDate";
 import FormButton from "../buttons/Form-Button";
@@ -11,7 +11,7 @@ function InputContainer() {
     <div className="input-container">
       <FirstName />
       <LastName />
-      <PresentWeight />
+      <StartingWeight />
       <Height />
       <EndGoalWeight />
       <EndGoalDate />

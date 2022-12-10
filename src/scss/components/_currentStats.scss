@@ -1,0 +1,9 @@
+@use "../utilities" as *;
+
+.current-stats {
+  text-transform: capitalize;
+  color: yellow;
+  text-align: center;
+  border-top: $gray-border;
+  font-size: $med-font-size;
+}

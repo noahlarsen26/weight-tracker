@@ -1,0 +1,35 @@
+@use "../utilities" as *;
+
+.input-form {
+  position: relative;
+  position: absolute;
+  background: $dark-color;
+  height: 100vh;
+  width: 100vw;
+  display: none;
+  .form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 35rem;
+    width: 30rem;
+    @include set-background($light-color);
+    font-size: $form-font-size;
+    &-container {
+      height: 100%;
+      width: 85%;
+      margin: 0 auto;
+      .input-container {
+        min-height: calc(100% - 4.5rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+.input-container input {
+  height: 1.75rem;
+  width: 100%;
+}

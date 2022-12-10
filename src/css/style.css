@@ -1,0 +1,298 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.start,
+.goals {
+  padding: 0;
+  list-style-type: none;
+}
+
+@media screen and (max-width: 530px) {
+  .container .tracker {
+    width: 90% !important;
+  }
+}
+@media screen and (max-width: 450px) {
+  h2 {
+    font-size: 1.25rem !important;
+  }
+  .weight-btn {
+    font-size: 1rem !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  .form {
+    width: 90% !important;
+  }
+}
+@media screen and (max-width: 460px) {
+  .form-heading {
+    font-size: 0.75rem !important;
+  }
+  .input-container {
+    font-size: 0.75rem;
+  }
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.container .tracker {
+  border-radius: 30px;
+  height: 80%;
+  margin: 0 auto;
+  width: 500px;
+  background: #292929;
+  color: #f4f4f4;
+  backdrop-filter: blur(10px);
+  border: solid 2px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px 0 rgba(8, 7, 16, 0.6);
+}
+
+.overview {
+  height: 30%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 0.75rem;
+}
+.overview .current-weight {
+  height: 90%;
+  width: 35%;
+  position: relative;
+}
+.overview .current-weight .circle {
+  border: solid 1px gray;
+  border-radius: 50%;
+  width: 100%;
+  padding-bottom: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.overview .current-weight h2 {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.75rem;
+  width: 100%;
+  text-align: center;
+}
+.overview .current-weight h2 span {
+  font-size: 1rem;
+}
+
+.progress-container {
+  width: 100%;
+  height: 4rem;
+  border-top: solid 1px gray;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 0.75rem;
+}
+.progress-container h3 {
+  text-transform: capitalize;
+}
+.progress-container .progress-bar {
+  width: 40%;
+  background: lightgray;
+  height: 1rem;
+}
+.progress-container .progress-bar .progress {
+  height: inherit;
+  width: 50%;
+  background-color: blue;
+}
+
+.current-stats {
+  text-transform: capitalize;
+  color: yellow;
+  text-align: center;
+  border-top: solid 1px gray;
+  font-size: 1rem;
+}
+
+.progression {
+  display: flex;
+  justify-content: space-around;
+  border-top: solid 1px gray;
+  font-size: 0.75rem;
+}
+.progression h3:first-of-type {
+  text-transform: capitalize;
+}
+
+.current-bmi {
+  display: flex;
+  justify-content: space-around;
+  border-top: solid 1px gray;
+  font-size: 0.75rem;
+}
+.current-bmi .bmi {
+  text-transform: uppercase;
+}
+.current-bmi h3:nth-of-type(2) {
+  color: bisque;
+  text-transform: capitalize;
+}
+
+.weightloss {
+  border-top: solid 1px gray;
+  display: flex;
+  justify-content: space-around;
+  font-size: 0.75rem;
+}
+
+.enter-weight {
+  border-top: solid 1px gray;
+  height: 4.85rem;
+}
+.enter-weight-btn {
+  position: relative;
+  height: 100%;
+}
+.enter-weight-btn .weight-btn {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  text-transform: capitalize;
+  height: 75%;
+  width: 50%;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 30px;
+  border: none;
+}
+.enter-weight-btn .weight-btn:hover {
+  background: bisque;
+}
+
+.input-form {
+  position: relative;
+  position: absolute;
+  background: rgb(19, 21, 21);
+  height: 100vh;
+  width: 100vw;
+  display: none;
+}
+.input-form .form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 35rem;
+  width: 30rem;
+  background: #f4f4f4;
+  color: rgb(19, 21, 21);
+  font-size: 1.25rem;
+}
+.input-form .form-container {
+  height: 100%;
+  width: 85%;
+  margin: 0 auto;
+}
+.input-form .form-container .input-container {
+  min-height: calc(100% - 4.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.input-container input {
+  height: 1.75rem;
+  width: 100%;
+}
+
+.firstName,
+.lastName {
+  text-transform: capitalize;
+}
+
+.firstName label,
+.lastName label {
+  display: block;
+}
+
+.end-goal-weight,
+.end-goal-date {
+  text-transform: capitalize;
+}
+
+.end-goal-weight label,
+.end-goal-date label {
+  display: block;
+}
+
+.present-weight {
+  text-transform: capitalize;
+}
+
+.present-weight label {
+  display: block;
+}
+
+.form-heading {
+  font-size: 1rem;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.btn-container {
+  height: 2.5rem;
+}
+.btn-container .form-btn {
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  font-size: 1.25rem;
+  background: blue;
+  color: #f4f4f4;
+}
+.btn-container .form-btn:hover {
+  background: #53628d;
+}
+
+.height {
+  text-transform: capitalize;
+}
+.height label {
+  display: block;
+}
+.height-container {
+  display: flex;
+  justify-content: space-between;
+}
+.height-container input {
+  width: 49%;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(rgb(19, 21, 21), rgba(0, 0, 0, 0.7));
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 1px;
+  color: #f4f4f4;
+  font-family: "Roboto", sans-serif;
+}
+body #root {
+  height: 100%;
+}
+body #root .name {
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */

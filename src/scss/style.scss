@@ -1,0 +1,27 @@
+@use "utilities" as *;
+@use "components";
+@use "form";
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+body {
+  // background: $background1;
+  background: $background1;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 1px;
+  color: $light-color;
+  font-family: "Roboto", sans-serif;
+  #root {
+    height: 100%;
+    .name {
+      text-align: center;
+    }
+  }
+}

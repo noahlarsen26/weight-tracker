@@ -1,0 +1,16 @@
+@use "../utilities" as *;
+
+.btn-container {
+  height: 2.5rem;
+  .form-btn {
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    font-size: $form-font-size;
+    background: blue;
+    color: set-text-color(blue);
+    &:hover {
+      background: $form-hover;
+    }
+  }
+}

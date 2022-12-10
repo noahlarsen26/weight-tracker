@@ -1,0 +1,13 @@
+.height {
+  text-transform: capitalize;
+  label {
+    display: block;
+  }
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    input {
+      width: 49%;
+    }
+  }
+}

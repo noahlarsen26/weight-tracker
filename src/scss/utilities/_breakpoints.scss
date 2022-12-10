@@ -1,0 +1,30 @@
+@use "./fonts" as *;
+
+@media screen and (max-width: 530px) {
+  .container .tracker {
+    width: 90% !important;
+  }
+}
+@media screen and (max-width: 450px) {
+  h2 {
+    font-size: $form-font-size !important;
+  }
+  .weight-btn {
+    font-size: $med-font-size !important;
+  }
+}
+
+// FORM MEDIA QUERIES
+@media screen and (max-width: 500px) {
+  .form {
+    width: 90% !important;
+  }
+}
+@media screen and (max-width: 460px) {
+  .form-heading {
+    font-size: $font-size !important;
+  }
+  .input-container {
+    font-size: $font-size;
+  }
+}

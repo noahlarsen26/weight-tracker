@@ -1,0 +1,24 @@
+@use "../utilities" as *;
+
+.progress-container {
+  width: 100%;
+  height: 4rem;
+  border-top: $gray-border;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: $font-size;
+  h3 {
+    text-transform: capitalize;
+  }
+  .progress-bar {
+    width: 40%;
+    background: lightgray;
+    height: 1rem;
+    .progress {
+      height: inherit;
+      width: 50%;
+      background-color: $progress;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+@use "../utilities" as *;
+
+.form-heading {
+  font-size: $med-font-size;
+  text-transform: capitalize;
+  text-align: center;
+}

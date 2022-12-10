@@ -1,0 +1,26 @@
+$dark-color: rgb(19, 21, 21);
+$background1: linear-gradient(rgb(19, 21, 21), rgba(0, 0, 0, 0.7));
+$background2: #292929;
+$form-hover: #53628d;
+$light-color: #f4f4f4;
+$progress: blue;
+$test-border1: solid 1px red;
+$test-border2: solid 1px blue;
+$test-border3: solid 1px green;
+$test-border4: solid 1px orange;
+$gray-border: solid 1px gray;
+
+// set text color based on bg
+
+@function set-text-color($color) {
+  @if (lightness($color) > 70) {
+    @return $dark-color;
+  } @else {
+    @return $light-color;
+  }
+}
+
+@mixin set-background($color) {
+  background: $color;
+  color: set-text-color($color);
+}

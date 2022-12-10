@@ -1,0 +1,11 @@
+@use "../utilities" as *;
+
+.progression {
+  display: flex;
+  justify-content: space-around;
+  border-top: $gray-border;
+  font-size: $font-size;
+  h3:first-of-type {
+    text-transform: capitalize;
+  }
+}

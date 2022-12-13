@@ -1,9 +1,9 @@
 import Form from "./Form";
 
-function InputForm() {
+function InputForm(props) {
   return (
     <section className="input-form">
-      <Form />
+      <Form onClick={props.onClick} />
     </section>
   );
 }

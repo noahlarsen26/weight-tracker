@@ -1,0 +1,11 @@
+.input-container {
+  height: calc(100% - 4.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-transform: capitalize;
+}
+.input-container input {
+  height: 1.75rem;
+  width: 100%;
+}

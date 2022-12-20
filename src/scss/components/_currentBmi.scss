@@ -3,8 +3,10 @@
 .current-bmi {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   border-top: $gray-border;
   font-size: $font-size;
+  height: 12%;
   .bmi {
     text-transform: uppercase;
   }

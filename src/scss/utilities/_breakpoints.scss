@@ -1,5 +1,6 @@
 @use "./fonts" as *;
 
+// TRACKER MEDIA QUERIES
 @media screen and (max-width: 530px) {
   .container .tracker {
     width: 90% !important;
@@ -20,11 +21,19 @@
     width: 90% !important;
   }
 }
-@media screen and (max-width: 460px) {
-  .form-heading {
-    font-size: $font-size !important;
-  }
+@media screen and (max-width: 470px) {
+  .form-heading,
   .input-container {
-    font-size: $font-size;
+    font-size: $med-font-size !important;
+  }
+}
+@media screen and (max-width: 455px) {
+  .form-heading {
+    font-size: 12px !important;
+  }
+}
+@media screen and (max-width: 385px) {
+  .input-container {
+    height: calc(100% - 5.5rem) !important;
   }
 }

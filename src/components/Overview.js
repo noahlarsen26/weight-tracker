@@ -1,22 +1,20 @@
-import { useLocalStorage } from "./hooks/useLocalStorage";
 import { useState, useEffect } from "react";
 
-function Overview(props) {
-  const [startingWeight, setStartingWeight] = useLocalStorage(
-    "Starting Weight",
-    ""
-  );
-  const [startingDate, setStartingDate] = useLocalStorage("Starting Date", "");
-  const [goalWeight, setGoalWeight] = useLocalStorage("Goal Weight", "");
-  const [goalDate, setGoalDate] = useLocalStorage("Goal Date", "");
-
+function Overview({
+  currentWeight,
+  height,
+  startingWeight,
+  startingDate,
+  goalWeight,
+  goalDate,
+}) {
   const [startingBMI, setStartingBMI] = useState(0);
   const [goalBMI, setGoalBMI] = useState(0);
 
   // CALCULATE BMI
   useEffect(() => {
-    setStartingBMI((startingWeight / (props.height * props.height)) * 10000);
-    setGoalBMI((goalWeight / (props.height * props.height)) * 10000);
+    setStartingBMI((startingWeight / (height * height)) * 10000);
+    setGoalBMI((goalWeight / (height * height)) * 10000);
   }, []);
 
   return (
@@ -38,7 +36,7 @@ function Overview(props) {
       <div className="current-weight">
         <div className="circle">
           <h2>
-            {props.currentWeight} <span>kgs</span>
+            {currentWeight} <span>kgs</span>
           </h2>
         </div>
       </div>

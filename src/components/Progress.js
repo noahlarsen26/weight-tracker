@@ -1,14 +1,12 @@
-import { useLocalStorage } from "./hooks/useLocalStorage";
 import { useState, useEffect } from "react";
 
-function Progress(props) {
-  const [goalWeight, setGoalWeight] = useLocalStorage("Goal Weight", "");
+function Progress({ goalWeight, currentWeight }) {
   const [progress, setProgress] = useState(goalWeight);
 
   // CALCULATE PROGRESS
   useEffect(() => {
-    setProgress((goalWeight / props.currentWeight) * 100);
-  }, [props.currentWeight]);
+    setProgress((goalWeight / currentWeight) * 100);
+  }, [currentWeight]);
 
   return (
     <section className="progress-container">

@@ -1,12 +1,8 @@
-function EnterWeightBtn(props) {
+function EnterWeightBtn({ onClick, divClassName, btnClassName, input, type }) {
   return (
-    <div className={props.divClassName}>
-      <button
-        onClick={props.onClick}
-        className={props.btnClassName}
-        type={props.type}
-      >
-        {props.input}
+    <div className={divClassName}>
+      <button onClick={onClick} className={btnClassName} type={type}>
+        {input}
       </button>
     </div>
   );

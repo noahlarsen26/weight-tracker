@@ -1,22 +1,38 @@
-import { useLocalStorage } from "./hooks/useLocalStorage";
+// import { useLocalStorage } from "./hooks/useLocalStorage";
 import EnterWeightBtn from "./EnterWeightBtn";
 
-function Form(props) {
+function Form({
+  firstName,
+  lastName,
+  startingWeight,
+  currentWeight,
+  startingDate,
+  meters,
+  goalWeight,
+  goalDate,
+  setFirstName,
+  setLastName,
+  setStartingWeight,
+  setCurrentWeight,
+  setStartingDate,
+  setMeters,
+  setGoalWeight,
+  setGoalDate,
+  onClick,
+}) {
   // SAVE FORM DATA TO LOCAL STORAGE
-  const [firstName, setFirstName] = useLocalStorage("First Name", "");
-  const [lastName, setLastName] = useLocalStorage("Last Name", "");
-  const [startingWeight, setStartingWeight] = useLocalStorage(
-    "Starting Weight",
-    ""
-  );
-  const [currentWeight, setCurrentWeight] = useLocalStorage(
-    "Current Weight",
-    ""
-  );
-  const [startingDate, setStartingDate] = useLocalStorage("Starting Date", "");
-  const [meters, setMeters] = useLocalStorage("Meters", "");
-  const [goalWeight, setGoalWeight] = useLocalStorage("Goal Weight", "");
-  const [goalDate, setGoalDate] = useLocalStorage("Goal Date", "");
+  // const [startingWeight, setStartingWeight] = useLocalStorage(
+  //   "Starting Weight",
+  //   ""
+  // );
+  // const [currentWeight, setCurrentWeight] = useLocalStorage(
+  //   "Current Weight",
+  //   ""
+  // );
+  // const [startingDate, setStartingDate] = useLocalStorage("Starting Date", "");
+  // const [meters, setMeters] = useLocalStorage("Meters", "");
+  // const [goalWeight, setGoalWeight] = useLocalStorage("Goal Weight", "");
+  // const [goalDate, setGoalDate] = useLocalStorage("Goal Date", "");
 
   return (
     <form
@@ -35,7 +51,7 @@ function Form(props) {
             <input
               required
               value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
+              onChange={setFirstName}
               type="text"
               name="first-name"
               id="first-name"
@@ -45,8 +61,8 @@ function Form(props) {
             <label htmlFor="last-name">last name:</label>
             <input
               required
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
+              value={setLastName}
+              onChange={lastName}
               type="text"
               name="last-name"
               id="last-name"
@@ -59,7 +75,7 @@ function Form(props) {
             <input
               required
               value={startingWeight}
-              onChange={(e) => setStartingWeight(e.target.value)}
+              onChange={setStartingWeight}
               type="number"
               name="starting-weight"
               id="starting-weight"
@@ -72,7 +88,7 @@ function Form(props) {
             <input
               required
               value={currentWeight}
-              onChange={(e) => setCurrentWeight(e.target.value)}
+              onChange={setCurrentWeight}
               type="number"
               name="current-weight"
               id="current-weight"
@@ -84,7 +100,7 @@ function Form(props) {
               <input
                 required
                 value={meters}
-                onChange={(e) => setMeters(e.target.value)}
+                onChange={setMeters}
                 placeholder="Centimeters"
                 type="number"
                 name="meters"
@@ -97,7 +113,7 @@ function Form(props) {
             <input
               required
               value={goalWeight}
-              onChange={(e) => setGoalWeight(e.target.value)}
+              onChange={setGoalWeight}
               type="number"
               name="end-goal-weight"
               id="end-goal-weight"
@@ -108,7 +124,7 @@ function Form(props) {
             <input
               required
               value={startingDate}
-              onChange={(e) => setStartingDate(e.target.value)}
+              onChange={setStartingDate}
               type="date"
               name="start-goal-date"
               id="start-goal-date"
@@ -119,14 +135,14 @@ function Form(props) {
             <input
               required
               value={goalDate}
-              onChange={(e) => setGoalDate(e.target.value)}
+              onChange={setGoalDate}
               type="date"
               name="end-goal-date"
               id="end-goal-date"
             />
           </div>
           <EnterWeightBtn
-            onClick={props.onClick}
+            onClick={onClick}
             divClassName={"btn-container"}
             btnClassName={"form-btn"}
             input={"Submit"}

@@ -1,14 +1,12 @@
 import { useState, useEffect } from "react";
 
-function CurrentBmi(props) {
+function CurrentBmi(currentWeight, height) {
   const [currentBMI, setCurrentBMI] = useState(0);
   const [BMI, setBMI] = useState("");
 
   // CALCULATE BMI
   useEffect(() => {
-    setCurrentBMI(
-      (props.currentWeight / (props.height * props.height)) * 10000
-    );
+    setCurrentBMI((currentWeight / (height * height)) * 10000);
 
     // SET BMI LABEL
     if (currentBMI < 18.5) {
@@ -24,7 +22,7 @@ function CurrentBmi(props) {
     } else {
       setBMI("obese class 3");
     }
-  }, [currentBMI, props.currentWeight]);
+  }, [currentBMI, currentWeight]);
 
   return (
     <section className="current-bmi">

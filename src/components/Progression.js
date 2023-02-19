@@ -1,16 +1,6 @@
-import { useLocalStorage } from "./hooks/useLocalStorage";
 import { useState, useEffect } from "react";
 
-function Progression() {
-  const [startingWeight, setStartingWeight] = useLocalStorage(
-    "Starting Weight",
-    ""
-  );
-  const [currentWeight, setCurrentWeight] = useLocalStorage(
-    "Current Weight",
-    ""
-  );
-  const [goalWeight, setGoalWeight] = useLocalStorage("Goal Weight", "");
+function Progression({ currentWeight, startingWeight, goalWeight }) {
   const [totalLost, setTotalLost] = useState(startingWeight);
   const [remainingKgs, setRemainingKgs] = useState(currentWeight);
 

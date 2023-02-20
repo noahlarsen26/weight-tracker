@@ -1,24 +1,24 @@
 import { useState, useEffect } from "react";
 import { useContext } from "react";
-import { Context } from "../App";
+import { TrackerContext } from "../App";
 
 function Overview() {
   const {
     currentWeight,
-    height,
+    meters,
     startingWeight,
     startingDate,
     goalWeight,
     goalDate,
-  } = useContext(Context);
+  } = useContext(TrackerContext);
 
   const [startingBMI, setStartingBMI] = useState(0);
   const [goalBMI, setGoalBMI] = useState(0);
 
   // CALCULATE BMI
   useEffect(() => {
-    setStartingBMI((startingWeight / (height * height)) * 10000);
-    setGoalBMI((goalWeight / (height * height)) * 10000);
+    setStartingBMI((startingWeight / (meters * meters)) * 10000);
+    setGoalBMI((goalWeight / (meters * meters)) * 10000);
   }, []);
 
   return (

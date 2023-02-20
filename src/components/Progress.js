@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useContext } from "react";
-import { Context } from "../App";
+import { TrackerContext } from "../App";
 
 function Progress() {
-  const { goalWeight, currentWeight } = useContext(Context);
+  const { goalWeight, currentWeight } = useContext(TrackerContext);
 
   const [progress, setProgress] = useState(goalWeight);
 

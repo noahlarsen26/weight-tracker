@@ -3,7 +3,8 @@ import Tracker from "./components/Tracker";
 import { useLocalStorage } from "../src/components/hooks/useLocalStorage";
 import Form from "./components/Form";
 
-export const Context = React.createContext();
+export const TrackerContext = React.createContext();
+export const FormContext = React.createContext();
 
 function App() {
   const [firstName, setFirstName] = useLocalStorage("First Name", "First");
@@ -40,40 +41,50 @@ function App() {
   }, [formIsOpen]);
 
   return (
-    <Context.Provider
-      value={{
-        firstName,
-        setFirstName,
-        lastName,
-        setLastName,
-        startingWeight,
-        setStartingWeight,
-        currentWeight,
-        setCurrentWeight,
-        startingDate,
-        setStartingDate,
-        meters,
-        setMeters,
-        goalWeight,
-        setGoalWeight,
-        goalDate,
-        setGoalDate,
-        closeFormHandler,
-        openFormHandler,
-      }}
-    >
-      <div className="container">
-        <h1 className="name">
-          {firstName} {lastName}
-        </h1>
+    <div className="container">
+      <h1 className="name">
+        {firstName} {lastName}
+      </h1>
+      <TrackerContext.Provider
+        value={{
+          openFormHandler,
+          currentWeight,
+          meters,
+          startingWeight,
+          goalWeight,
+          startingDate,
+          goalDate,
+        }}
+      >
         <Tracker />
-        {formIsOpen && (
+      </TrackerContext.Provider>
+      {formIsOpen && (
+        <FormContext.Provider
+          value={{
+            lastName,
+            startingWeight,
+            currentWeight,
+            startingDate,
+            meters,
+            goalWeight,
+            goalDate,
+            setFirstName,
+            setLastName,
+            setStartingWeight,
+            setCurrentWeight,
+            setStartingDate,
+            setMeters,
+            setGoalWeight,
+            setGoalDate,
+            closeFormHandler,
+          }}
+        >
           <section className="input-form">
             <Form />
           </section>
-        )}
-      </div>
-    </Context.Provider>
+        </FormContext.Provider>
+      )}
+    </div>
   );
 }
 

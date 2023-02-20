@@ -1,6 +1,6 @@
 import EnterWeightBtn from "./EnterWeightBtn";
 import { useContext } from "react";
-import { Context } from "../App";
+import { FormContext } from "../App";
 
 function Form() {
   const {
@@ -21,7 +21,7 @@ function Form() {
     setGoalWeight,
     setGoalDate,
     closeFormHandler,
-  } = useContext(Context);
+  } = useContext(FormContext);
   return (
     <form
       className="form"

@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 import { useContext } from "react";
-import { Context } from "../App";
+import { TrackerContext } from "../App";
 
 function CurrentBmi() {
-  const { currentWeight, height } = useContext(Context);
+  const { currentWeight, meters } = useContext(TrackerContext);
 
   const [currentBMI, setCurrentBMI] = useState(0);
   const [BMI, setBMI] = useState("");
 
   // CALCULATE BMI
   useEffect(() => {
-    setCurrentBMI((currentWeight / (height * height)) * 10000);
+    setCurrentBMI((currentWeight / (meters * meters)) * 10000);
 
     // SET BMI LABEL
     if (currentBMI < 18.5) {

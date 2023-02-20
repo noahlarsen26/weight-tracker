@@ -4,10 +4,10 @@ import Progression from "./Progression";
 import CurrentBmi from "./CurrentBmi";
 import EnterWeightBtn from "./EnterWeightBtn";
 import { useContext } from "react";
-import { Context } from "../App";
+import { TrackerContext } from "../App";
 
 function Tracker() {
-  const { openFormHandler } = useContext(Context);
+  const { openFormHandler } = useContext(TrackerContext);
   return (
     <main className="tracker">
       <Overview />

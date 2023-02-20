@@ -191,6 +191,7 @@
   background: #f4f4f4;
   color: rgb(19, 21, 21);
   font-size: 1.25rem;
+  border-radius: 30px;
 }
 .input-form .form-container {
   height: 100%;

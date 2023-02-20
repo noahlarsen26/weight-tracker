@@ -15,6 +15,7 @@
     width: 30rem;
     @include set-background($light-color);
     font-size: $form-font-size;
+    border-radius: 30px;
     &-container {
       height: 100%;
       width: 85%;

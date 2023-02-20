@@ -3,6 +3,8 @@ import Tracker from "./components/Tracker";
 import { useLocalStorage } from "../src/components/hooks/useLocalStorage";
 import Form from "./components/Form";
 
+export const Context = React.createContext();
+
 function App() {
   const [firstName, setFirstName] = useLocalStorage("First Name", "First");
   const [lastName, setLastName] = useLocalStorage("Last Name", "Last");
@@ -38,45 +40,40 @@ function App() {
   }, [formIsOpen]);
 
   return (
-    <div className="container">
-      <h1 className="name">
-        {firstName} {lastName}
-      </h1>
-
-      <Tracker
-        currentWeight={currentWeight}
-        meters={meters}
-        startingWeight={startingWeight}
-        startingDate={startingDate}
-        goalWeight={goalWeight}
-        goalDate={goalDate}
-        onClick={openFormHandler}
-      />
-
-      {formIsOpen && (
-        <section className="input-form">
-          <Form
-            firstName={firstName}
-            lastName={lastName}
-            startingWeight={startingWeight}
-            currentWeight={currentWeight}
-            startingDate={startingDate}
-            meters={meters}
-            goalWeight={goalWeight}
-            goalDate={goalDate}
-            setFirstName={(e) => setFirstName(e.target.value)}
-            setLastName={(e) => setLastName(e.target.value)}
-            setStartingWeight={(e) => setStartingWeight(e.target.value)}
-            setCurrentWeight={(e) => setCurrentWeight(e.target.value)}
-            setStartingDate={(e) => setStartingDate(e.target.value)}
-            setMeters={(e) => setMeters(e.target.value)}
-            setGoalWeight={(e) => setGoalWeight(e.target.value)}
-            setGoalDate={(e) => setGoalDate(e.target.value)}
-            onClick={closeFormHandler}
-          />
-        </section>
-      )}
-    </div>
+    <Context.Provider
+      value={{
+        firstName,
+        setFirstName,
+        lastName,
+        setLastName,
+        startingWeight,
+        setStartingWeight,
+        currentWeight,
+        setCurrentWeight,
+        startingDate,
+        setStartingDate,
+        meters,
+        setMeters,
+        goalWeight,
+        setGoalWeight,
+        goalDate,
+        setGoalDate,
+        closeFormHandler,
+        openFormHandler,
+      }}
+    >
+      <div className="container">
+        <h1 className="name">
+          {firstName} {lastName}
+        </h1>
+        <Tracker />
+        {formIsOpen && (
+          <section className="input-form">
+            <Form />
+          </section>
+        )}
+      </div>
+    </Context.Provider>
   );
 }
 

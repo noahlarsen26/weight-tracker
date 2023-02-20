@@ -1,39 +1,27 @@
-// import { useLocalStorage } from "./hooks/useLocalStorage";
 import EnterWeightBtn from "./EnterWeightBtn";
+import { useContext } from "react";
+import { Context } from "../App";
 
-function Form({
-  firstName,
-  lastName,
-  startingWeight,
-  currentWeight,
-  startingDate,
-  meters,
-  goalWeight,
-  goalDate,
-  setFirstName,
-  setLastName,
-  setStartingWeight,
-  setCurrentWeight,
-  setStartingDate,
-  setMeters,
-  setGoalWeight,
-  setGoalDate,
-  onClick,
-}) {
-  // SAVE FORM DATA TO LOCAL STORAGE
-  // const [startingWeight, setStartingWeight] = useLocalStorage(
-  //   "Starting Weight",
-  //   ""
-  // );
-  // const [currentWeight, setCurrentWeight] = useLocalStorage(
-  //   "Current Weight",
-  //   ""
-  // );
-  // const [startingDate, setStartingDate] = useLocalStorage("Starting Date", "");
-  // const [meters, setMeters] = useLocalStorage("Meters", "");
-  // const [goalWeight, setGoalWeight] = useLocalStorage("Goal Weight", "");
-  // const [goalDate, setGoalDate] = useLocalStorage("Goal Date", "");
-
+function Form() {
+  const {
+    firstName,
+    lastName,
+    startingWeight,
+    currentWeight,
+    startingDate,
+    meters,
+    goalWeight,
+    goalDate,
+    setFirstName,
+    setLastName,
+    setStartingWeight,
+    setCurrentWeight,
+    setStartingDate,
+    setMeters,
+    setGoalWeight,
+    setGoalDate,
+    closeFormHandler,
+  } = useContext(Context);
   return (
     <form
       className="form"
@@ -51,7 +39,7 @@ function Form({
             <input
               required
               value={firstName}
-              onChange={setFirstName}
+              onChange={(e) => setFirstName(e.target.value)}
               type="text"
               name="first-name"
               id="first-name"
@@ -61,8 +49,8 @@ function Form({
             <label htmlFor="last-name">last name:</label>
             <input
               required
-              value={setLastName}
-              onChange={lastName}
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
               type="text"
               name="last-name"
               id="last-name"
@@ -75,7 +63,7 @@ function Form({
             <input
               required
               value={startingWeight}
-              onChange={setStartingWeight}
+              onChange={(e) => setStartingWeight(e.target.value)}
               type="number"
               name="starting-weight"
               id="starting-weight"
@@ -88,7 +76,7 @@ function Form({
             <input
               required
               value={currentWeight}
-              onChange={setCurrentWeight}
+              onChange={(e) => setCurrentWeight(e.target.value)}
               type="number"
               name="current-weight"
               id="current-weight"
@@ -100,7 +88,7 @@ function Form({
               <input
                 required
                 value={meters}
-                onChange={setMeters}
+                onChange={(e) => setMeters(e.target.value)}
                 placeholder="Centimeters"
                 type="number"
                 name="meters"
@@ -113,7 +101,7 @@ function Form({
             <input
               required
               value={goalWeight}
-              onChange={setGoalWeight}
+              onChange={(e) => setGoalWeight(e.target.value)}
               type="number"
               name="end-goal-weight"
               id="end-goal-weight"
@@ -124,7 +112,7 @@ function Form({
             <input
               required
               value={startingDate}
-              onChange={setStartingDate}
+              onChange={(e) => setStartingDate(e.target.value)}
               type="date"
               name="start-goal-date"
               id="start-goal-date"
@@ -135,14 +123,14 @@ function Form({
             <input
               required
               value={goalDate}
-              onChange={setGoalDate}
+              onChange={(e) => setGoalDate(e.target.value)}
               type="date"
               name="end-goal-date"
               id="end-goal-date"
             />
           </div>
           <EnterWeightBtn
-            onClick={onClick}
+            onClick={closeFormHandler}
             divClassName={"btn-container"}
             btnClassName={"form-btn"}
             input={"Submit"}

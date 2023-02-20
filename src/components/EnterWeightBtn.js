@@ -1,4 +1,4 @@
-function EnterWeightBtn({ onClick, divClassName, btnClassName, input, type }) {
+function EnterWeightBtn({ btnClassName, input, type, divClassName, onClick }) {
   return (
     <div className={divClassName}>
       <button onClick={onClick} className={btnClassName} type={type}>

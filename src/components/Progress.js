@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
+import { useContext } from "react";
+import { Context } from "../App";
 
-function Progress({ goalWeight, currentWeight }) {
+function Progress() {
+  const { goalWeight, currentWeight } = useContext(Context);
+
   const [progress, setProgress] = useState(goalWeight);
 
   // CALCULATE PROGRESS

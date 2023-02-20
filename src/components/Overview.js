@@ -1,13 +1,17 @@
 import { useState, useEffect } from "react";
+import { useContext } from "react";
+import { Context } from "../App";
 
-function Overview({
-  currentWeight,
-  height,
-  startingWeight,
-  startingDate,
-  goalWeight,
-  goalDate,
-}) {
+function Overview() {
+  const {
+    currentWeight,
+    height,
+    startingWeight,
+    startingDate,
+    goalWeight,
+    goalDate,
+  } = useContext(Context);
+
   const [startingBMI, setStartingBMI] = useState(0);
   const [goalBMI, setGoalBMI] = useState(0);
 

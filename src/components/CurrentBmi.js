@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
+import { useContext } from "react";
+import { Context } from "../App";
 
-function CurrentBmi(currentWeight, height) {
+function CurrentBmi() {
+  const { currentWeight, height } = useContext(Context);
+
   const [currentBMI, setCurrentBMI] = useState(0);
   const [BMI, setBMI] = useState("");
 

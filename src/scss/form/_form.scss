@@ -11,11 +11,14 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 40rem;
+    height: 35rem;
     width: 30rem;
     @include set-background($light-color);
     font-size: $form-font-size;
     border-radius: 30px;
+    @include respond-to("big") {
+      width: 90%;
+    }
     &-container {
       height: 100%;
       width: 85%;
@@ -24,6 +27,9 @@
         font-size: $med-font-size;
         text-transform: capitalize;
         text-align: center;
+        @include respond-to("medium") {
+          font-size: 12px;
+        }
       }
     }
   }

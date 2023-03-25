@@ -1,9 +1,17 @@
+@use "../utilities" as *;
+
 .input-container {
   height: calc(100% - 4.5rem);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-transform: capitalize;
+  @include respond-to("medium") {
+    font-size: $med-font-size;
+  }
+  @include respond-to("small") {
+    height: calc(100% - 5.5rem);
+  }
 }
 .input-container input {
   height: 1.75rem;

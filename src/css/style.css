@@ -5,50 +5,15 @@
   list-style-type: none;
 }
 
-@media screen and (max-width: 530px) {
-  .container .tracker {
-    width: 90% !important;
-  }
-}
-@media screen and (max-width: 450px) {
-  h2 {
-    font-size: 1.25rem !important;
-  }
-  .weight-btn {
-    font-size: 1rem !important;
-  }
-}
-@media screen and (max-width: 500px) {
-  .form {
-    width: 90% !important;
-  }
-}
-@media screen and (max-width: 470px) {
-  .form-heading,
-.input-container {
-    font-size: 1rem !important;
-  }
-}
-@media screen and (max-width: 455px) {
-  .form-heading {
-    font-size: 12px !important;
-  }
-}
-@media screen and (max-width: 385px) {
-  .input-container {
-    height: calc(100% - 5.5rem) !important;
-  }
-}
 .container {
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   position: relative;
 }
 .container .tracker {
   border-radius: 30px;
-  height: 80%;
+  height: 34rem;
   margin: 0 auto;
   width: 500px;
   background: #292929;
@@ -57,12 +22,22 @@
   border: solid 2px rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 40px 0 rgba(8, 7, 16, 0.6);
 }
+@media (max-width: 530px) {
+  .container .tracker {
+    width: 90%;
+  }
+}
 .container .tracker .current-stats {
   text-transform: capitalize;
   color: yellow;
   text-align: center;
   border-top: solid 1px gray;
   font-size: 1rem;
+}
+@media (max-width: 470px) {
+  .container .tracker .current-stats h2 {
+    font-size: 1.25rem;
+  }
 }
 .container .tracker .progression {
   display: flex;
@@ -152,23 +127,24 @@
   height: 4.85rem;
 }
 .enter-weight-btn {
-  position: relative;
   height: 100%;
+  display: flex;
 }
 .enter-weight-btn .weight-btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   margin: auto;
   text-transform: capitalize;
-  height: 75%;
+  height: 65%;
   width: 50%;
   font-size: 1.25rem;
   font-weight: bold;
   cursor: pointer;
   border-radius: 30px;
   border: none;
+}
+@media (max-width: 470px) {
+  .enter-weight-btn .weight-btn {
+    font-size: 1rem;
+  }
 }
 .enter-weight-btn .weight-btn:hover {
   background: bisque;
@@ -186,12 +162,17 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 40rem;
+  height: 35rem;
   width: 30rem;
   background: #f4f4f4;
   color: rgb(19, 21, 21);
   font-size: 1.25rem;
   border-radius: 30px;
+}
+@media (max-width: 530px) {
+  .input-form .form {
+    width: 90%;
+  }
 }
 .input-form .form-container {
   height: 100%;
@@ -202,6 +183,11 @@
   font-size: 1rem;
   text-transform: capitalize;
   text-align: center;
+}
+@media (max-width: 470px) {
+  .input-form .form-container .form-heading {
+    font-size: 12px;
+  }
 }
 
 .btn-container {
@@ -226,6 +212,16 @@
   justify-content: space-between;
   text-transform: capitalize;
 }
+@media (max-width: 470px) {
+  .input-container {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 385px) {
+  .input-container {
+    height: calc(100% - 5.5rem);
+  }
+}
 
 .input-container input {
   height: 1.75rem;
@@ -240,17 +236,13 @@
 
 body {
   background: linear-gradient(rgb(19, 21, 21), rgba(0, 0, 0, 0.7));
-  height: 100vh;
   margin: 0;
   padding: 0;
   letter-spacing: 1px;
   color: #f4f4f4;
   font-family: "Roboto", sans-serif;
 }
-body #root {
-  height: 100%;
-}
-body #root .name {
+body .name {
   text-align: center;
 }
 

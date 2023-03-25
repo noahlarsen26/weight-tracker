@@ -1,39 +1,30 @@
-@use "./fonts" as *;
+$breakpoints: (
+  "small": (
+    max-width: 385px,
+  ),
+  "medium": (
+    max-width: 470px,
+  ),
+  "big": (
+    max-width: 530px,
+  ),
+);
 
-// TRACKER MEDIA QUERIES
-@media screen and (max-width: 530px) {
-  .container .tracker {
-    width: 90% !important;
-  }
-}
-@media screen and (max-width: 450px) {
-  h2 {
-    font-size: $form-font-size !important;
-  }
-  .weight-btn {
-    font-size: $med-font-size !important;
-  }
-}
+@mixin respond-to($breakpoint) {
+  $raw-query: map-get($breakpoints, $breakpoint);
 
-// FORM MEDIA QUERIES
-@media screen and (max-width: 500px) {
-  .form {
-    width: 90% !important;
-  }
-}
-@media screen and (max-width: 470px) {
-  .form-heading,
-  .input-container {
-    font-size: $med-font-size !important;
-  }
-}
-@media screen and (max-width: 455px) {
-  .form-heading {
-    font-size: 12px !important;
-  }
-}
-@media screen and (max-width: 385px) {
-  .input-container {
-    height: calc(100% - 5.5rem) !important;
+  @if $raw-query {
+    $query: if(
+      type-of($raw-query) == "string",
+      unquote($raw-query),
+      inspect($raw-query)
+    );
+
+    @media #{$query} {
+      @content;
+    }
+  } @else {
+    @error 'No value found for `#{$breakpoint}`. '
+        + 'Please make sure it is defined in `$breakpoints` map.';
   }
 }

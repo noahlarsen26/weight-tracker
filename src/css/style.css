@@ -6,7 +6,7 @@
 }
 
 .container {
-  height: 100vh;
+  height: calc(100vh - 4rem);
   display: flex;
   flex-direction: column;
   position: relative;
@@ -154,7 +154,7 @@
   position: relative;
   position: absolute;
   background: rgb(19, 21, 21);
-  height: 100vh;
+  height: calc(100vh - 4rem);
   width: 100vw;
 }
 .input-form .form {
@@ -226,6 +226,24 @@
 .input-container input {
   height: 1.75rem;
   width: 100%;
+}
+
+nav {
+  background: rgb(18, 86, 136);
+  height: 4rem;
+  margin: 0 auto;
+}
+nav ul {
+  font-size: 1.15rem;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  align-items: center;
+}
+nav ul li {
+  cursor: pointer;
 }
 
 *,

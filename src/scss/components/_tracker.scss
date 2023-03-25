@@ -1,7 +1,7 @@
 @use "../utilities" as *;
 
 .container {
-  height: 100vh;
+  height: calc(100vh - 4rem);
   display: flex;
   flex-direction: column;
   position: relative;

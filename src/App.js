@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Tracker from "./components/Tracker";
 import { useLocalStorage } from "../src/components/hooks/useLocalStorage";
 import Form from "./components/Form";
+import Navbar from "./components/Navbar";
 
 export const TrackerContext = React.createContext();
 export const FormContext = React.createContext();
@@ -41,50 +42,53 @@ function App() {
   }, [formIsOpen]);
 
   return (
-    <div className="container">
-      <h1 className="name">
-        {firstName} {lastName}
-      </h1>
-      <TrackerContext.Provider
-        value={{
-          openFormHandler,
-          currentWeight,
-          meters,
-          startingWeight,
-          goalWeight,
-          startingDate,
-          goalDate,
-        }}
-      >
-        <Tracker />
-      </TrackerContext.Provider>
-      {formIsOpen && (
-        <FormContext.Provider
+    <>
+      <Navbar />
+      <div className="container">
+        <h1 className="name">
+          {firstName} {lastName}
+        </h1>
+        <TrackerContext.Provider
           value={{
-            lastName,
-            startingWeight,
+            openFormHandler,
             currentWeight,
-            startingDate,
             meters,
+            startingWeight,
             goalWeight,
+            startingDate,
             goalDate,
-            setFirstName,
-            setLastName,
-            setStartingWeight,
-            setCurrentWeight,
-            setStartingDate,
-            setMeters,
-            setGoalWeight,
-            setGoalDate,
-            closeFormHandler,
           }}
         >
-          <section className="input-form">
-            <Form />
-          </section>
-        </FormContext.Provider>
-      )}
-    </div>
+          <Tracker />
+        </TrackerContext.Provider>
+        {formIsOpen && (
+          <FormContext.Provider
+            value={{
+              lastName,
+              startingWeight,
+              currentWeight,
+              startingDate,
+              meters,
+              goalWeight,
+              goalDate,
+              setFirstName,
+              setLastName,
+              setStartingWeight,
+              setCurrentWeight,
+              setStartingDate,
+              setMeters,
+              setGoalWeight,
+              setGoalDate,
+              closeFormHandler,
+            }}
+          >
+            <section className="input-form">
+              <Form />
+            </section>
+          </FormContext.Provider>
+        )}
+      </div>
+    </>
   );
 }
 

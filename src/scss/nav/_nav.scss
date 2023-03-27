@@ -1,17 +1,33 @@
 @use "../utilities" as *;
 
 nav {
-  background: rgb(18, 86, 136);
   height: 4rem;
-  margin: 0 auto;
-  ul {
-    font-size: 1.15rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  .hamburger-btn {
+    right: 0;
+    position: absolute;
+    background: none;
+    color: $light-color;
+    border: none;
     height: 100%;
-    margin: 0;
+    width: 3rem;
+    font-size: 2.5rem;
+    cursor: pointer;
+  }
+  ul {
+    width: 1100px;
+    font-size: $nav-font;
+    height: 3rem;
+    margin: 0 auto;
     display: flex;
     justify-content: space-around;
     list-style-type: none;
     align-items: center;
+    @include respond-to("big") {
+      display: none;
+    }
     li {
       cursor: pointer;
     }

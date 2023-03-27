@@ -1,19 +1,48 @@
 @use "../utilities" as *;
 
 .container {
-  height: calc(100vh - 4rem);
+  height: calc(90vh - 4rem);
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   position: relative;
-  .tracker {
-    border-radius: 30px;
+  @include respond-to("huge") {
+    height: calc(100vh - 4rem);
+  }
+  .back-filler {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     height: 34rem;
-    margin: 0 auto;
     width: 500px;
-    @include set-background($background2);
-    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    opacity: 0.2;
+    @include respond-to("big") {
+      width: 90%;
+    }
+    &-1 {
+      top: 20%;
+      left: 10%;
+      background-color: $light-color;
+      position: absolute;
+      width: 70%;
+      height: 47%;
+      transform: rotate(-30deg);
+      border-radius: 100px;
+    }
+  }
+  .tracker {
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    height: calc(90% - 3rem);
+    width: 500px;
+    margin: 0 auto;
+    backdrop-filter: blur(25px);
     border: solid 2px rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 40px 0 rgba(8, 7, 16, 0.6);
+    box-shadow: 0 0 5px 1px #908b8b, 0 0 1px 1px #908b8b, 0 0 0 1px #000;
+    z-index: 30;
     @include respond-to("big") {
       width: 90%;
     }
@@ -22,7 +51,8 @@
       color: yellow;
       text-align: center;
       border-top: $gray-border;
-      font-size: $med-font-size;
+      font-size: $font-size;
+      height: 3rem;
       h2 {
         @include respond-to("medium") {
           font-size: $form-font-size;

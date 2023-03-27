@@ -1,6 +1,13 @@
 $dark-color: rgb(19, 21, 21);
+$dark-bg: linear-gradient(to top, rgb(74, 71, 71), rgba(0, 0, 0, 1));
 $background1: linear-gradient(rgb(19, 21, 21), rgba(0, 0, 0, 0.7));
 $background2: #292929;
+$background3: linear-gradient(
+  135deg,
+  rgba(255, 255, 255, 0.1),
+  rgba(255, 255, 255, 0)
+);
+$background4: linear-gradient(135deg, rgb(74, 117, 155));
 $form-hover: #53628d;
 $light-color: #f4f4f4;
 $progress: blue;
@@ -17,6 +24,6 @@ $gray-border: solid 1px gray;
 }
 
 @mixin set-background($color) {
-  background: $color;
+  background-color: $color;
   color: set-text-color($color);
 }

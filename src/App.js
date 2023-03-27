@@ -61,6 +61,9 @@ function App() {
         >
           <Tracker />
         </TrackerContext.Provider>
+        <div className="back-filler">
+          <div className="back-filler-1"></div>
+        </div>
         {formIsOpen && (
           <FormContext.Provider
             value={{

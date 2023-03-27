@@ -2,9 +2,9 @@ import Overview from "./Overview";
 import Progress from "./Progress";
 import Progression from "./Progression";
 import CurrentBmi from "./CurrentBmi";
-import EnterWeightBtn from "../EnterWeightBtn";
+import EnterWeightBtn from "../../EnterWeightBtn";
 import { useContext } from "react";
-import { TrackerContext } from "../../App";
+import { TrackerContext } from "../../../App";
 
 function Tracker() {
   const { openFormHandler } = useContext(TrackerContext);

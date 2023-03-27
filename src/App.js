@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Tracker from "./components/tracker/Tracker";
+import Tracker from "./components/pages/currentData/Tracker";
 import { useLocalStorage } from "../src/components/hooks/useLocalStorage";
 import Form from "./components/Form";
 import Navbar from "./components/Navbar";

@@ -1,27 +1,6 @@
-@use "utilities" as *;
-@use "components";
+@use "utilities";
+
 @use "form";
 @use "nav";
+@use "pages";
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-
-*,
-::after,
-::before {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  letter-spacing: 2px;
-  color: $light-color;
-  font-family: "Roboto", sans-serif;
-  background: $dark-bg;
-  padding-bottom: 70px;
-  overflow: hidden;
-  .name {
-    margin: 0;
-    text-align: center;
-    height: 3rem;
-  }
-}

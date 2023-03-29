@@ -1,186 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  letter-spacing: 2px;
+  color: #f4f4f4;
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(to top, rgb(74, 71, 71), rgb(0, 0, 0));
+  padding-bottom: 70px;
+  overflow: hidden;
+}
+
 .start,
 .goals {
   padding: 0;
   list-style-type: none;
-}
-
-.container {
-  height: calc(90vh - 4rem);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  position: relative;
-}
-@media (max-width: 1246px) {
-  .container {
-    height: calc(100vh - 4rem);
-  }
-}
-.container .back-filler {
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 34rem;
-  width: 500px;
-  border-radius: 30px;
-  opacity: 0.2;
-}
-@media (max-width: 530px) {
-  .container .back-filler {
-    width: 90%;
-  }
-}
-.container .back-filler-1 {
-  top: 20%;
-  left: 10%;
-  background-color: #f4f4f4;
-  position: absolute;
-  width: 70%;
-  height: 47%;
-  transform: rotate(-30deg);
-  border-radius: 100px;
-}
-.container .tracker {
-  display: flex;
-  flex-direction: column;
-  border-radius: 30px;
-  height: calc(90% - 3rem);
-  width: 500px;
-  margin: 0 auto;
-  backdrop-filter: blur(25px);
-  border: solid 2px rgba(255, 255, 255, 0.1);
-  box-shadow: 0 0 5px 1px #908b8b, 0 0 1px 1px #908b8b, 0 0 0 1px #000;
-  z-index: 30;
-}
-@media (max-width: 530px) {
-  .container .tracker {
-    width: 90%;
-  }
-}
-.container .tracker .current-stats {
-  text-transform: capitalize;
-  color: yellow;
-  text-align: center;
-  border-top: solid 1px gray;
-  font-size: 0.75rem;
-  height: 3rem;
-}
-@media (max-width: 470px) {
-  .container .tracker .current-stats h2 {
-    font-size: 1.25rem;
-  }
-}
-.container .tracker .progression {
-  display: flex;
-  justify-content: space-around;
-  border-top: solid 1px gray;
-  font-size: 0.75rem;
-}
-.container .tracker .progression h3:first-of-type {
-  text-transform: capitalize;
-}
-
-.overview {
-  height: 10rem;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  font-size: 0.75rem;
-}
-.overview .current-weight {
-  height: 90%;
-  width: 35%;
-  position: relative;
-}
-.overview .current-weight .circle {
-  border: solid 1px gray;
-  border-radius: 50%;
-  width: 100%;
-  padding-bottom: 90%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.overview .current-weight h2 {
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 1.75rem;
-  width: 100%;
-  text-align: center;
-}
-.overview .current-weight h2 span {
-  font-size: 1rem;
-}
-
-.progress-container {
-  width: 100%;
-  border-top: solid 1px gray;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  font-size: 0.75rem;
-}
-.progress-container h3 {
-  text-transform: capitalize;
-}
-.progress-container .progress-bar {
-  width: 40%;
-  background: lightgray;
-  height: 1rem;
-}
-.progress-container .progress-bar .progress {
-  height: inherit;
-  background-color: blue;
-}
-
-.current-bmi {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  border-top: solid 1px gray;
-  font-size: 0.75rem;
-  height: 12%;
-}
-.current-bmi .bmi {
-  text-transform: uppercase;
-}
-.current-bmi h3:nth-of-type(2) {
-  color: bisque;
-  text-transform: capitalize;
-}
-
-.enter-weight {
-  border-top: solid 1px gray;
-  flex-grow: 1;
-}
-.enter-weight-btn {
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-.enter-weight-btn .weight-btn {
-  margin: auto;
-  text-transform: capitalize;
-  height: 75%;
-  width: 50%;
-  font-size: 1.25rem;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 30px;
-  border: none;
-}
-@media (max-width: 470px) {
-  .enter-weight-btn .weight-btn {
-    font-size: 1rem;
-  }
-}
-.enter-weight-btn .weight-btn:hover {
-  background: bisque;
 }
 
 .input-form {
@@ -303,26 +142,183 @@ nav ul a {
   color: #f4f4f4;
 }
 
-*,
-::after,
-::before {
-  box-sizing: border-box;
+.container {
+  height: calc(90vh - 4rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
 }
-
-body {
-  margin: 0;
-  padding: 0;
-  letter-spacing: 2px;
-  color: #f4f4f4;
-  font-family: "Roboto", sans-serif;
-  background: linear-gradient(to top, rgb(74, 71, 71), rgb(0, 0, 0));
-  padding-bottom: 70px;
-  overflow: hidden;
+@media (max-width: 1246px) {
+  .container {
+    height: calc(100vh - 4rem);
+  }
 }
-body .name {
+.container .name {
   margin: 0;
   text-align: center;
   height: 3rem;
+}
+.container .tracker {
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px;
+  height: calc(90% - 3rem);
+  width: 500px;
+  margin: 0 auto;
+  backdrop-filter: blur(25px);
+  border: solid 2px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 5px 1px #908b8b, 0 0 1px 1px #908b8b, 0 0 0 1px #000;
+  z-index: 30;
+}
+@media (max-width: 530px) {
+  .container .tracker {
+    width: 90%;
+  }
+}
+.container .tracker .overview {
+  height: 10rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 0.75rem;
+}
+.container .tracker .overview .current-weight {
+  height: 90%;
+  width: 35%;
+  position: relative;
+}
+.container .tracker .overview .current-weight .circle {
+  border: solid 1px gray;
+  border-radius: 50%;
+  width: 100%;
+  padding-bottom: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container .tracker .overview .current-weight .circle h2 {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.75rem;
+  width: 100%;
+  text-align: center;
+}
+.container .tracker .overview .current-weight .circle h2 span {
+  font-size: 1rem;
+}
+.container .tracker .progress-container {
+  width: 100%;
+  border-top: solid 1px gray;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 0.75rem;
+}
+.container .tracker .progress-container h3 {
+  text-transform: capitalize;
+}
+.container .tracker .progress-container .progress-bar {
+  width: 40%;
+  background: lightgray;
+  height: 1rem;
+}
+.container .tracker .progress-container .progress-bar .progress {
+  height: inherit;
+  background-color: blue;
+}
+.container .tracker .current-stats {
+  text-transform: capitalize;
+  color: yellow;
+  text-align: center;
+  border-top: solid 1px gray;
+  font-size: 0.75rem;
+  height: 3rem;
+}
+@media (max-width: 470px) {
+  .container .tracker .current-stats h2 {
+    font-size: 1.25rem;
+  }
+}
+.container .tracker .progression {
+  display: flex;
+  justify-content: space-around;
+  border-top: solid 1px gray;
+  font-size: 0.75rem;
+}
+.container .tracker .progression h3:first-of-type {
+  text-transform: capitalize;
+}
+.container .tracker .current-bmi {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: solid 1px gray;
+  font-size: 0.75rem;
+  height: 12%;
+}
+.container .tracker .current-bmi h3:nth-of-type(2) {
+  color: bisque;
+  text-transform: capitalize;
+}
+.container .tracker .current-bmi .bmi {
+  text-transform: uppercase;
+}
+.container .tracker .enter-weight {
+  border-top: solid 1px gray;
+  flex-grow: 1;
+}
+.container .tracker .enter-weight-btn {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.container .tracker .enter-weight-btn .weight-btn {
+  margin: auto;
+  text-transform: capitalize;
+  height: 75%;
+  width: 50%;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 30px;
+  border: none;
+}
+@media (max-width: 470px) {
+  .container .tracker .enter-weight-btn .weight-btn {
+    font-size: 1rem;
+  }
+}
+.container .tracker .enter-weight-btn .weight-btn:hover {
+  background: bisque;
+}
+.container .back-filler {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 34rem;
+  width: 500px;
+  border-radius: 30px;
+  opacity: 0.2;
+}
+@media (max-width: 530px) {
+  .container .back-filler {
+    width: 90%;
+  }
+}
+.container .back-filler-1 {
+  top: 20%;
+  left: 10%;
+  background-color: #f4f4f4;
+  position: absolute;
+  width: 70%;
+  height: 47%;
+  transform: rotate(-30deg);
+  border-radius: 100px;
 }
 
 /*# sourceMappingURL=style.css.map */

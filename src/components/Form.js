@@ -1,6 +1,6 @@
 import EnterWeightBtn from "./EnterWeightBtn";
 import { useContext } from "react";
-import { FormContext } from "../App";
+import { FormContext } from "./pages/currentData/CurrentData";
 
 function Form() {
   const {

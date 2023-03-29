@@ -189,6 +189,7 @@
   background: rgb(19, 21, 21);
   height: calc(100vh - 4rem);
   width: 100vw;
+  z-index: 31;
 }
 .input-form .form {
   position: absolute;
@@ -287,14 +288,19 @@ nav ul {
   justify-content: space-around;
   list-style-type: none;
   align-items: center;
+  font-weight: bold;
 }
 @media (max-width: 530px) {
   nav ul {
     display: none;
   }
 }
-nav ul li {
-  cursor: pointer;
+nav ul .active {
+  border-bottom: solid 2px #f4f4f4;
+}
+nav ul a {
+  text-decoration: none;
+  color: #f4f4f4;
 }
 
 *,

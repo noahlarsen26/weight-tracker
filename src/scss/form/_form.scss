@@ -6,6 +6,7 @@
   background: $dark-color;
   height: calc(100vh - 4rem);
   width: 100vw;
+  z-index: 31;
   .form {
     position: absolute;
     top: 50%;

@@ -3,7 +3,7 @@ import CurrentData from "./components/pages/currentData/CurrentData";
 import { Route, Routes } from "react-router-dom";
 import Login from "./components/pages/login/Login";
 import History from "./components/pages/history/History";
-import Statistics from "./components/pages/statistics/Statistics";
+import Profile from "./components/pages/profile/Profile";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<CurrentData />} />
           <Route path="/history" element={<History />} />
-          <Route path="/statistics" element={<Statistics />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Login />} />
         </Routes>
       </div>

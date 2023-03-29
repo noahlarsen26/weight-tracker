@@ -11,7 +11,7 @@ function Navbar() {
       <ul>
         <CustomLink to={"/"}>Current Data</CustomLink>
         <CustomLink to={"/history"}>History</CustomLink>
-        <CustomLink to={"/statistics"}>Statistics</CustomLink>
+        <CustomLink to={"/profile"}>Profile</CustomLink>
         <CustomLink to={"/login"}>Log In</CustomLink>
       </ul>
     </nav>

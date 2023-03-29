@@ -1,32 +1,42 @@
 function History() {
   return (
-    <>
-      <header className="heading">
+    <section className="history">
+      <header>
         <div className="title">
           <h2>history</h2>
         </div>
-        <div className="name">
+        <div className="first-name">
           <h3>firstName</h3>
         </div>
       </header>
-      <section className="history">
-        <div className="history-container">
-          <div className="input-history">
+      <div className="history-container">
+        <div className="input-history">
+          <div className="weight-container">
             <p className="input">57kg</p>
             <p className="difference">-2kg</p>
-            <div className="day-date">
-              <p>March</p>
-              <p>17</p>
-              <p>2023</p>
+          </div>
+          <section className="progress-bar-container">
+            <h3>progress</h3>
+            <div className="progress-bar">
+              <div
+                style={{ width: "90%" }}
+                // style={{ width: `${Math.floor(progress)}%` }}
+                className="progress"
+              ></div>
             </div>
-            <div className="date-time">
-              <p>Friday</p>
-              <p>1:10 AM</p>
-            </div>
+            <div>{/* <h3>{Math.floor(progress)}%</h3> */}</div>
+          </section>
+          <div className="day-date">
+            <p>March 17</p>
+            <p>2023</p>
+          </div>
+          <div className="date-time">
+            <p>Friday</p>
+            <p>1:10 AM</p>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
 

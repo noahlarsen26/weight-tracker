@@ -12,8 +12,6 @@ body {
   color: #f4f4f4;
   font-family: "Roboto", sans-serif;
   background: linear-gradient(to top, rgb(74, 71, 71), rgb(0, 0, 0));
-  padding-bottom: 70px;
-  overflow: hidden;
 }
 
 .start,
@@ -142,17 +140,103 @@ nav ul a {
   color: #f4f4f4;
 }
 
+.history {
+  height: calc(100vh - 4rem);
+  width: 100vw;
+  background: rgb(19, 21, 21);
+  overflow-x: hidden;
+}
+.history header {
+  height: 6.25rem;
+  background: rgba(0, 0, 0, 0.7);
+  text-transform: capitalize;
+}
+.history header .title {
+  text-align: center;
+  font-size: 1.25rem;
+  border: solid 1px transparent;
+  height: 4.25rem;
+}
+.history header .first-name {
+  color: gray;
+  font-size: 0.75rem;
+  width: 90%;
+  margin: 0 auto;
+}
+.history .history-container {
+  min-height: calc(100% - 6.25rem);
+}
+.history .history-container .input-history {
+  border-bottom: solid 1px gray;
+  height: inherit;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+@media (max-width: 760px) {
+  .history .history-container .input-history {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 470px) {
+  .history .history-container .input-history {
+    font-size: 0.75rem;
+  }
+}
+.history .history-container .input-history .weight-container .difference {
+  font-size: 1rem;
+}
+@media (max-width: 760px) {
+  .history .history-container .input-history .weight-container .difference {
+    font-size: 0.75rem;
+  }
+}
+@media (max-width: 470px) {
+  .history .history-container .input-history .weight-container .difference {
+    font-size: 0.5rem;
+  }
+}
+.history .history-container .input-history .progress-bar-container {
+  width: 20rem;
+  text-transform: capitalize;
+  text-align: center;
+}
+@media (max-width: 760px) {
+  .history .history-container .input-history .progress-bar-container {
+    width: 15rem;
+  }
+}
+@media (max-width: 530px) {
+  .history .history-container .input-history .progress-bar-container {
+    width: 10rem;
+  }
+}
+.history .history-container .input-history .progress-bar-container .progress-bar {
+  background: lightgray;
+  height: 1rem;
+}
+@media (max-width: 470px) {
+  .history .history-container .input-history .progress-bar-container .progress-bar {
+    height: 0.5rem;
+    width: 7rem;
+    margin: 0 auto;
+  }
+}
+.history .history-container .input-history .progress-bar-container .progress-bar .progress {
+  height: inherit;
+  background-color: blue;
+}
+
 .container {
-  height: calc(90vh - 4rem);
+  height: calc(100vh - 4rem);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
   position: relative;
-}
-@media (max-width: 1246px) {
-  .container {
-    height: calc(100vh - 4rem);
-  }
 }
 .container .name {
   margin: 0;
@@ -163,9 +247,9 @@ nav ul a {
   display: flex;
   flex-direction: column;
   border-radius: 30px;
-  height: calc(90% - 3rem);
+  height: 29.25rem;
   width: 500px;
-  margin: 0 auto;
+  margin-bottom: 1rem;
   backdrop-filter: blur(25px);
   border: solid 2px rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 5px 1px #908b8b, 0 0 1px 1px #908b8b, 0 0 0 1px #000;

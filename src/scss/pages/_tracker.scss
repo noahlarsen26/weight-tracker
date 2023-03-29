@@ -1,14 +1,13 @@
 @use "../utilities" as *;
 
 .container {
-  height: calc(90vh - 4rem);
+  height: calc(100vh - 4rem);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
   position: relative;
-  @include respond-to("huge") {
-    height: calc(100vh - 4rem);
-  }
+  // border: solid 1px blue;
   .name {
     margin: 0;
     text-align: center;
@@ -18,9 +17,9 @@
     display: flex;
     flex-direction: column;
     border-radius: 30px;
-    height: calc(90% - 3rem);
+    height: 29.25rem;
     width: 500px;
-    margin: 0 auto;
+    margin-bottom: 1rem;
     backdrop-filter: blur(25px);
     border: solid 2px rgba(255, 255, 255, 0.1);
     box-shadow: 0 0 5px 1px #908b8b, 0 0 1px 1px #908b8b, 0 0 0 1px #000;

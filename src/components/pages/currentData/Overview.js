@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useContext } from "react";
-import { TrackerContext } from "./CurrentData";
+import { FormContext } from "../../../App";
 
 function Overview() {
   const {
@@ -10,7 +10,7 @@ function Overview() {
     startingDate,
     goalWeight,
     goalDate,
-  } = useContext(TrackerContext);
+  } = useContext(FormContext);
 
   const [startingBMI, setStartingBMI] = useState(0);
   const [goalBMI, setGoalBMI] = useState(0);

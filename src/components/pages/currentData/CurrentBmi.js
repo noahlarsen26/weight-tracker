@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useContext } from "react";
-import { TrackerContext } from "./CurrentData";
+import { FormContext } from "../../../App";
 
 function CurrentBmi() {
-  const { currentWeight, meters } = useContext(TrackerContext);
+  const { currentWeight, meters } = useContext(FormContext);
 
   const [currentBMI, setCurrentBMI] = useState(0);
   const [BMI, setBMI] = useState("");

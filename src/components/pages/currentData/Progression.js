@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import { useContext } from "react";
-import { TrackerContext } from "./CurrentData";
+import { FormContext } from "../../../App";
 
 function Progression() {
-  const { currentWeight, startingWeight, goalWeight } =
-    useContext(TrackerContext);
+  const { currentWeight, startingWeight, goalWeight } = useContext(FormContext);
 
   const [totalLost, setTotalLost] = useState(startingWeight);
   const [remainingKgs, setRemainingKgs] = useState(currentWeight);

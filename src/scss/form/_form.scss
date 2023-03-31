@@ -1,36 +1,55 @@
 @use "../utilities" as *;
 
+.form-heading {
+  font-size: $med-font-size;
+  text-transform: capitalize;
+  width: 100%;
+  height: 4.5rem;
+  h2 {
+    height: 50%;
+    text-align: center;
+    text-transform: capitalize;
+  }
+}
 .input-form {
-  position: relative;
-  position: absolute;
-  background: $dark-color;
-  height: calc(100vh - 4rem);
+  background: rgba(0, 0, 0, 0.7);
   width: 100vw;
-  z-index: 31;
-  .form {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 35rem;
-    width: 30rem;
-    @include set-background($light-color);
-    font-size: $form-font-size;
-    border-radius: 30px;
-    @include respond-to("big") {
+  height: calc(100vh - 8.5rem);
+  &-container {
+    border: solid 1px transparent;
+    width: 48rem;
+    margin: 0 auto;
+    height: 100%;
+    @include respond-to("bigger") {
       width: 90%;
     }
-    &-container {
-      height: 100%;
-      width: 85%;
+    h3 {
+      height: 1.5rem;
+      text-transform: capitalize;
+      width: 70%;
+      margin: 0.75rem auto;
+      color: gray;
+      @include respond-to("bigger") {
+        width: 90%;
+      }
+    }
+    .form {
+      width: 33.5rem;
+      height: calc(50% - 4rem);
       margin: 0 auto;
-      .form-heading {
-        font-size: $med-font-size;
-        text-transform: capitalize;
-        text-align: center;
-        @include respond-to("medium") {
-          font-size: 12px;
-        }
+      @include respond-to("bigger") {
+        width: 90%;
+      }
+      .form-container {
+        height: 100%;
+        width: 90%;
+        margin: 0 auto;
+      }
+      @include set-background($formbg);
+      font-size: $form-font-size;
+      border-radius: 30px;
+      @include respond-to("big") {
+        width: 90%;
       }
     }
   }

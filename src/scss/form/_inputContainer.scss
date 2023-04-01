@@ -5,37 +5,47 @@
   display: flex;
   flex-direction: column;
   text-transform: capitalize;
-  @include respond-to("medium") {
-    font-size: $med-font-size;
+  @include respond-to("biggest") {
   }
-}
-.input-container div {
-  display: flex;
-  flex-direction: column;
-  // border: solid 1px red;
-  height: 100%;
-}
-.input-container label {
-  flex-grow: 1;
-  font-weight: bold;
-}
-.input-container input {
-  // height: 1.75rem;
-  flex-grow: 1;
-  display: block;
-  background: $formbg;
-  color: $light-color;
-  letter-spacing: 1.5px;
-  border-bottom: $gray-border;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  width: 100%;
-  font-size: $med-font-size;
-}
 
-input[type="date"]::-webkit-calendar-picker-indicator {
-  cursor: pointer;
-  filter: invert(1);
-  font-size: $med-font-size;
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+    label {
+      padding-top: 0.75rem;
+      font-weight: bold;
+      font-size: 1.25rem;
+      @include respond-to("bigger") {
+        font-size: 1rem;
+        padding: 0;
+        height: 1rem;
+      }
+    }
+    input {
+      height: 2.75rem;
+      display: block;
+      background: $formbg;
+      color: $light-color;
+      letter-spacing: 1.5px;
+      border-bottom: $gray-border;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      width: 100%;
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      @include respond-to("bigger") {
+        font-size: 0.75rem;
+        height: 0.75rem;
+      }
+    }
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      cursor: pointer;
+      filter: invert(1);
+      font-size: $med-font-size;
+    }
+  }
 }

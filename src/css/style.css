@@ -278,10 +278,12 @@ aside nav .side-nav {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
-aside nav .side-nav li {
+aside nav .side-nav li a {
+  text-decoration: none;
   cursor: pointer;
+  color: #f4f4f4;
 }
 
 .history {

@@ -1,3 +1,5 @@
+import { CustomLink } from "./Navbar";
+
 function Sidebar({ onClick }) {
   return (
     <aside>
@@ -6,10 +8,18 @@ function Sidebar({ onClick }) {
       </button>
       <nav>
         <ul className="side-nav">
-          <li>current data</li>
-          <li>history</li>
-          <li>profile</li>
-          <li>log in</li>
+          <CustomLink onClick={onClick} to={"/"}>
+            Current Data
+          </CustomLink>
+          <CustomLink onClick={onClick} to={"/history"}>
+            History
+          </CustomLink>
+          <CustomLink onClick={onClick} to={"/profile"}>
+            Profile
+          </CustomLink>
+          <CustomLink onClick={onClick} to={"/login"}>
+            Log In
+          </CustomLink>
         </ul>
       </nav>
     </aside>

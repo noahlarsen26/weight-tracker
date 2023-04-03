@@ -24,6 +24,8 @@ function App() {
   const [goalWeight, setGoalWeight] = useLocalStorage("Goal Weight", "");
   const [goalDate, setGoalDate] = useLocalStorage("Goal Date", "");
   const [birthDate, setBirthDate] = useLocalStorage("Birthdate", "");
+  const [email, setEmail] = useLocalStorage("Email", "");
+  const [pasword, setPassword] = useLocalStorage("Password", "");
   return (
     <>
       <Navbar />
@@ -47,6 +49,10 @@ function App() {
           setGoalDate,
           birthDate,
           setBirthDate,
+          email,
+          setEmail,
+          pasword,
+          setPassword,
           // closeFormHandler,
         }}
       >

@@ -54,6 +54,9 @@
             font-size: $big-font-size;
             width: 100%;
             text-align: center;
+            @include respond-to("medium") {
+              font-size: 1.5rem;
+            }
             span {
               font-size: $med-font-size;
             }

@@ -1,10 +1,11 @@
 @use "../utilities" as *;
 
 .form-heading {
-  font-size: $med-font-size;
+  font-size: 1.25rem;
+  height: 3rem;
   text-transform: capitalize;
   width: 100%;
-  height: 4.5rem;
+
   h2 {
     height: 50%;
     text-align: center;
@@ -12,7 +13,6 @@
   }
 }
 .input-form {
-  background: rgba(0, 0, 0, 0.7);
   width: 100vw;
   height: calc(100vh - 9rem);
   &-container {
@@ -66,9 +66,7 @@
           width: 90%;
           margin: 0 auto;
         }
-        @include set-background($formbg);
         font-size: $form-font-size;
-        border-radius: 30px;
       }
       @include respond-to("bigger") {
         margin: 0;

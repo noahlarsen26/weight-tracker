@@ -3,17 +3,15 @@
 .history {
   height: calc(100vh - 4rem);
   width: 100vw;
-  background: $dark-color;
   overflow-x: hidden;
   header {
     height: 6.25rem;
-    background: rgba(0, 0, 0, 0.7);
     text-transform: capitalize;
     .title {
       text-align: center;
-      font-size: 1.5rem;
+      font-size: 1.25rem;
+      height: 3rem;
       border: solid 1px transparent;
-      height: 4.25rem;
     }
     .first-name {
       color: gray;

@@ -5,8 +5,6 @@
   display: flex;
   flex-direction: column;
   text-transform: capitalize;
-  @include respond-to("biggest") {
-  }
 
   div {
     display: flex;
@@ -27,10 +25,10 @@
     input {
       height: 2.75rem;
       display: block;
-      background: $formbg;
+      background: none;
       color: $light-color;
       letter-spacing: 1.5px;
-      border-bottom: $gray-border;
+      border-bottom: solid 2px gray;
       border-top: none;
       border-left: none;
       border-right: none;
@@ -38,14 +36,32 @@
       font-size: 1.25rem;
       margin-bottom: 0.75rem;
       @include respond-to("bigger") {
+        margin-bottom: 0.25rem;
         font-size: 0.75rem;
-        height: 0.75rem;
+        height: 1rem;
       }
     }
     input[type="date"]::-webkit-calendar-picker-indicator {
       cursor: pointer;
       filter: invert(1);
       font-size: $med-font-size;
+    }
+  }
+  .btn {
+    text-transform: capitalize;
+    font-size: $weight-btn-font;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 30px;
+    border: none;
+    padding-block: 0.25rem;
+    @include respond-to("bigger") {
+      // margin-bottom: 0.75rem;
+      padding: 0;
+      font-size: 1rem;
+    }
+    &:hover {
+      background: bisque;
     }
   }
 }

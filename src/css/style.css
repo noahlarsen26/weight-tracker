@@ -12,6 +12,7 @@ body {
   color: #f4f4f4;
   font-family: "Roboto", sans-serif;
   background: linear-gradient(to top, rgb(74, 71, 71), rgb(0, 0, 0));
+  overflow: hidden;
 }
 
 .start,
@@ -21,10 +22,10 @@ body {
 }
 
 .form-heading {
-  font-size: 1rem;
+  font-size: 1.25rem;
+  height: 3rem;
   text-transform: capitalize;
   width: 100%;
-  height: 4.5rem;
 }
 .form-heading h2 {
   height: 50%;
@@ -33,7 +34,6 @@ body {
 }
 
 .input-form {
-  background: rgba(0, 0, 0, 0.7);
   width: 100vw;
   height: calc(100vh - 9rem);
 }
@@ -92,10 +92,7 @@ body {
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  background-color: rgb(18, 18, 18);
-  color: #f4f4f4;
   font-size: 1.25rem;
-  border-radius: 30px;
 }
 @media (max-width: 760px) {
   .input-form-container .placeholderClass .form {
@@ -155,10 +152,10 @@ body {
 .input-container div input {
   height: 2.75rem;
   display: block;
-  background: rgb(18, 18, 18);
+  background: none;
   color: #f4f4f4;
   letter-spacing: 1.5px;
-  border-bottom: solid 1px gray;
+  border-bottom: solid 2px gray;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -168,14 +165,33 @@ body {
 }
 @media (max-width: 760px) {
   .input-container div input {
+    margin-bottom: 0.25rem;
     font-size: 0.75rem;
-    height: 0.75rem;
+    height: 1rem;
   }
 }
 .input-container div input[type=date]::-webkit-calendar-picker-indicator {
   cursor: pointer;
   filter: invert(1);
   font-size: 1rem;
+}
+.input-container .btn {
+  text-transform: capitalize;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 30px;
+  border: none;
+  padding-block: 0.25rem;
+}
+@media (max-width: 760px) {
+  .input-container .btn {
+    padding: 0;
+    font-size: 1rem;
+  }
+}
+.input-container .btn:hover {
+  background: bisque;
 }
 
 nav {
@@ -222,19 +238,17 @@ nav ul a {
 .history {
   height: calc(100vh - 4rem);
   width: 100vw;
-  background: rgb(19, 21, 21);
   overflow-x: hidden;
 }
 .history header {
   height: 6.25rem;
-  background: rgba(0, 0, 0, 0.7);
   text-transform: capitalize;
 }
 .history header .title {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  height: 3rem;
   border: solid 1px transparent;
-  height: 4.25rem;
 }
 .history header .first-name {
   color: gray;
@@ -370,6 +384,11 @@ nav ul a {
   width: 100%;
   text-align: center;
 }
+@media (max-width: 470px) {
+  .container .tracker .overview .current-weight .circle h2 {
+    font-size: 1.5rem;
+  }
+}
 .container .tracker .overview .current-weight .circle h2 span {
   font-size: 1rem;
 }
@@ -482,6 +501,89 @@ nav ul a {
   height: 47%;
   transform: rotate(-30deg);
   border-radius: 100px;
+}
+
+.login-page {
+  width: 100vw;
+  height: calc(100vh - 4rem);
+  text-transform: capitalize;
+}
+.login-page header {
+  text-align: center;
+  font-size: 1.25rem;
+  height: 3rem;
+  margin-bottom: 5rem;
+  padding-top: 2rem;
+}
+.login-page header .title {
+  height: 100%;
+}
+.login-page header .title h2 {
+  margin-top: 0;
+  height: 100%;
+}
+.login-page .login {
+  height: 50%;
+  width: 50%;
+  margin: 0 auto;
+  background: rgb(18, 18, 18);
+  border-radius: 30px;
+  position: relative;
+}
+@media (max-width: 760px) {
+  .login-page .login {
+    width: 25rem;
+  }
+}
+@media (max-width: 470px) {
+  .login-page .login {
+    width: 20rem;
+  }
+}
+.login-page .login .login-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80%;
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.login-page .login .login-container div {
+  width: 100%;
+}
+.login-page .login .login-container div label {
+  display: block;
+  margin-bottom: 0.75rem;
+}
+.login-page .login .login-container div input {
+  width: 100%;
+  height: 2rem;
+  border-radius: 5px;
+  background: gray;
+}
+.login-page .login .login-container div:nth-of-type(2) {
+  height: 7rem;
+}
+.login-page .login .login-container .error {
+  color: red;
+  font-weight: bold;
+}
+.login-page .login .login-container .btn {
+  text-transform: capitalize;
+  height: 2rem;
+  width: 100%;
+  background: blue;
+  color: #f4f4f4;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  letter-spacing: 1.5px;
 }
 
 /*# sourceMappingURL=style.css.map */

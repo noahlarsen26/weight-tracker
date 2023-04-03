@@ -81,6 +81,7 @@ function Profile() {
                   >
                     height (centimeters):
                   </FormInput>
+                  <button className="btn">submit</button>
                 </div>
               </div>
             </form>
@@ -135,6 +136,7 @@ function Profile() {
                   >
                     goal weight (kilograms):
                   </FormInput>
+                  <button className="btn">submit</button>
                 </div>
               </div>
             </form>

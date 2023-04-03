@@ -6,6 +6,7 @@ import Login from "./components/pages/login/Login";
 import History from "./components/pages/history/History";
 import Profile from "./components/pages/profile/Profile";
 import { useLocalStorage } from "./components/hooks/useLocalStorage";
+import Sidebar from "./components/Sidebar";
 export const FormContext = React.createContext();
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
   return (
     <>
       <Navbar />
+      <Sidebar />
       <FormContext.Provider
         value={{
           firstName,

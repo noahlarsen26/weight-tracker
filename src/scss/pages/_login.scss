@@ -36,16 +36,13 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      // border: solid 1px blue;
       height: 80%;
       width: 85%;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      // row-gap: 2rem;
       div {
-        // border: solid 1px red;
         width: 100%;
         label {
           display: block;
@@ -64,8 +61,6 @@
       .error {
         color: red;
         font-weight: bold;
-        // border: solid 1px green;
-        // height: 3rem;
       }
       .btn {
         text-transform: capitalize;
@@ -76,7 +71,6 @@
         border: none;
         border-radius: 5px;
         font-weight: bold;
-        // margin-top: auto;
         cursor: pointer;
         font-size: 1rem;
         letter-spacing: 1.5px;

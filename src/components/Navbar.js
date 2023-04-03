@@ -4,7 +4,7 @@ import { Link, useMatch, useResolvedPath } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav>
+    <nav className="navbar">
       <button className="hamburger-btn">
         <FontAwesomeIcon icon={faBars} />
       </button>

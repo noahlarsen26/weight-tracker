@@ -7,9 +7,18 @@ import History from "./components/pages/history/History";
 import Profile from "./components/pages/profile/Profile";
 import { useLocalStorage } from "./components/hooks/useLocalStorage";
 import Sidebar from "./components/Sidebar";
+import { useState } from "react";
 export const FormContext = React.createContext();
 
 function App() {
+  const [sidebar, setSidebar] = useState(false);
+
+  function openSidebarHandler() {
+    setSidebar(true);
+  }
+  function closeSidebarHandler() {
+    setSidebar(false);
+  }
   const [firstName, setFirstName] = useLocalStorage("First Name", "First");
   const [lastName, setLastName] = useLocalStorage("Last Name", "Last");
   const [startingWeight, setStartingWeight] = useLocalStorage(
@@ -29,8 +38,8 @@ function App() {
   const [pasword, setPassword] = useLocalStorage("Password", "");
   return (
     <>
-      <Navbar />
-      <Sidebar />
+      <Navbar onClick={openSidebarHandler} />
+      {sidebar && <Sidebar onClick={closeSidebarHandler} />}
       <FormContext.Provider
         value={{
           firstName,

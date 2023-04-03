@@ -1,7 +1,9 @@
-function Sidebar() {
+function Sidebar({ onClick }) {
   return (
     <aside>
-      <div className="close-btn">x</div>
+      <button onClick={onClick} className="close-btn">
+        x
+      </button>
       <nav>
         <ul className="side-nav">
           <li>current data</li>

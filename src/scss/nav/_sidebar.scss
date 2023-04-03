@@ -1,3 +1,5 @@
+@use "../utilities" as *;
+
 aside {
   position: absolute;
   display: flex;
@@ -10,7 +12,7 @@ aside {
   text-transform: capitalize;
   background: #27292b;
   color: white;
-  display: none;
+  // display: none;
   .close-btn {
     height: 3rem;
     font-size: 2rem;
@@ -20,6 +22,10 @@ aside {
     margin-top: 2rem;
     margin-right: 1rem;
     cursor: pointer;
+    background: none;
+    color: $light-color;
+    border: none;
+    text-transform: capitalize;
   }
   nav {
     height: calc(100% - 5rem);

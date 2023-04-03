@@ -2,10 +2,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 
-function Navbar() {
+function Navbar({ onClick }) {
   return (
     <nav className="navbar">
-      <button className="hamburger-btn">
+      <button onClick={onClick} className="hamburger-btn">
         <FontAwesomeIcon icon={faBars} />
       </button>
       <ul>

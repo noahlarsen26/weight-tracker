@@ -22,7 +22,7 @@ body {
 }
 
 .form-heading {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   height: 3rem;
   text-transform: capitalize;
   width: 100%;
@@ -297,7 +297,7 @@ aside nav .side-nav li a {
 }
 .history header .title {
   text-align: center;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   height: 3rem;
   border: solid 1px transparent;
 }
@@ -386,6 +386,8 @@ aside nav .side-nav li a {
   margin: 0;
   text-align: center;
   height: 3rem;
+  font-size: 2.25rem;
+  width: 100%;
 }
 .container .tracker {
   display: flex;
@@ -561,7 +563,7 @@ aside nav .side-nav li a {
 }
 .login-page header {
   text-align: center;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   height: 3rem;
   margin-bottom: 5rem;
   padding-top: 2rem;

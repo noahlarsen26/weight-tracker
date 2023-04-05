@@ -6,7 +6,7 @@ import EnterWeightBtn from "../../EnterWeightBtn";
 import { useContext } from "react";
 import { FormContext } from "../../../App";
 
-function Tracker() {
+function Tracker({ weightForm }) {
   const { openFormHandler } = useContext(FormContext);
   return (
     <main className="tracker">
@@ -19,10 +19,11 @@ function Tracker() {
       <CurrentBmi />
       <section className="enter-weight">
         <EnterWeightBtn
-          onClick={openFormHandler}
+          // onClick={openFormHandler}
+          onClick={weightForm}
           divClassName={"enter-weight-btn"}
           btnClassName={"weight-btn"}
-          input={"enter statistics"}
+          input={"enter weight"}
         />
       </section>
     </main>

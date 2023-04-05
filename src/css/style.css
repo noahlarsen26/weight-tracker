@@ -639,4 +639,97 @@ aside nav .side-nav li a {
   letter-spacing: 1.5px;
 }
 
+.overlay {
+  height: calc(100vh - 4rem);
+  width: 100vw;
+  background: black;
+  position: absolute;
+  z-index: 100;
+  margin-bottom: auto;
+  opacity: 0.7;
+  z-index: 40;
+}
+
+.slider {
+  position: relative;
+  z-index: 41;
+  height: 20rem;
+  width: 25rem;
+  position: absolute;
+  padding: 1rem;
+  background: black;
+  border-radius: 10px;
+}
+@media (max-width: 470px) {
+  .slider {
+    width: 90%;
+  }
+}
+.slider .close {
+  position: absolute;
+  right: 0;
+  transform: translateX(-30%);
+  height: 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 2rem;
+  cursor: pointer;
+  background: none;
+  color: red;
+  border: none;
+  text-transform: capitalize;
+  opacity: 0.7;
+}
+.slider-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.slider-container h2 {
+  text-transform: capitalize;
+  font-size: 1.75rem;
+}
+.slider-container h2 span {
+  text-transform: lowercase;
+}
+.slider-container .input-container {
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.slider-container .input-container input[type=range] {
+  height: 100%;
+  width: 75%;
+}
+.slider-container .input-container input:nth-of-type(2) {
+  width: 15%;
+  height: 1rem;
+}
+.slider-container .weight-value {
+  display: flex;
+  height: 3rem;
+  align-items: start;
+}
+.slider-container .weight-value p {
+  font-size: 1.25rem;
+  margin-top: 0;
+}
+.slider-container .btn {
+  text-transform: capitalize;
+  height: 2rem;
+  width: 100%;
+  background: blue;
+  color: #f4f4f4;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+}
+
 /*# sourceMappingURL=style.css.map */

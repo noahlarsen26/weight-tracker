@@ -1,4 +1,11 @@
+import { useState } from "react";
+
 function WeightSlider({ onClick }) {
+  const [value, setValue] = useState(70);
+
+  function getBackgroundSize() {
+    return { backgroundSize: `${(value * 100) / 150}% 100%` };
+  }
   return (
     <>
       <div className="overlay"></div>
@@ -11,12 +18,18 @@ function WeightSlider({ onClick }) {
             enter weight <span>(kgs)</span>
           </h2>
           <div className="input-container">
-            <input type="range" min="30" max="300" value="70" />
-            <input type="number" placeholder="70" />
+            <input
+              type="range"
+              max={150}
+              value={value}
+              onChange={(e) => setValue(e.target.valueAsNumber)}
+              style={getBackgroundSize()}
+            />
           </div>
           <div className="weight-value">
             <p>
-              70<span>kgs</span>
+              {value}
+              <span>kgs</span>
             </p>
           </div>
           <button onClick={onClick} type="button" className="btn">

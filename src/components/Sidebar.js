@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { CustomLink } from "./Navbar";
+import { AuthContext } from "../context/AuthContext";
 
-function Sidebar({ onClick }) {
+function Sidebar({ onClick, logout }) {
+  const { currentUser } = useContext(AuthContext);
   return (
     <aside>
       <button onClick={onClick} className="close-btn">
@@ -17,9 +20,15 @@ function Sidebar({ onClick }) {
           <CustomLink onClick={onClick} to={"/profile"}>
             Profile
           </CustomLink>
-          <CustomLink onClick={onClick} to={"/login"}>
-            Log In
-          </CustomLink>
+          {currentUser ? (
+            <CustomLink onClick={logout} to={"/login"}>
+              Log Out
+            </CustomLink>
+          ) : (
+            <CustomLink onClick={onClick} to={"/login"}>
+              Log In
+            </CustomLink>
+          )}
         </ul>
       </nav>
     </aside>

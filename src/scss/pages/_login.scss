@@ -32,6 +32,7 @@
       width: 20rem;
     }
     .login-container {
+      position: relative;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -61,6 +62,12 @@
       .error {
         color: red;
         font-weight: bold;
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        text-align: center;
       }
       .btn {
         text-transform: capitalize;

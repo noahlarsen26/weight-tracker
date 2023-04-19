@@ -1,23 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import Navbar from "./components/Navbar";
 import CurrentData from "./components/pages/currentData/CurrentData";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import Login from "./components/pages/login/Login";
 import History from "./components/pages/history/History";
 import Profile from "./components/pages/profile/Profile";
 import { useLocalStorage } from "./components/hooks/useLocalStorage";
 import Sidebar from "./components/Sidebar";
 import { useState } from "react";
+import { AuthContext } from "./context/AuthContext";
 export const FormContext = React.createContext();
 
 function App() {
   const [sidebar, setSidebar] = useState(false);
+  const { dispatch } = useContext(AuthContext);
 
-  function openSidebarHandler() {
-    setSidebar(true);
-  }
-  function closeSidebarHandler() {
+  function logoutHandler() {
     setSidebar(false);
+    dispatch({ type: "LOGOUT" });
   }
   const [firstName, setFirstName] = useLocalStorage("First Name", "First");
   const [lastName, setLastName] = useLocalStorage("Last Name", "Last");
@@ -36,10 +36,20 @@ function App() {
   const [birthDate, setBirthDate] = useLocalStorage("Birthdate", "");
   const [email, setEmail] = useLocalStorage("Email", "");
   const [pasword, setPassword] = useLocalStorage("Password", "");
+
+  const { currentUser } = useContext(AuthContext);
+
+  function RequireAuth({ children }) {
+    return currentUser ? children : <Navigate to="/login" />;
+  }
+  console.log(currentUser);
+
   return (
     <>
-      <Navbar onClick={openSidebarHandler} />
-      {sidebar && <Sidebar onClick={closeSidebarHandler} />}
+      <Navbar onClick={() => setSidebar(true)} />
+      {sidebar && (
+        <Sidebar onClick={() => setSidebar(false)} logout={logoutHandler} />
+      )}
       <FormContext.Provider
         value={{
           firstName,
@@ -69,9 +79,30 @@ function App() {
       >
         <div className="container">
           <Routes>
-            <Route path="/" element={<CurrentData />} />
-            <Route path="/history" element={<History />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route
+              path="/"
+              element={
+                <RequireAuth>
+                  <CurrentData />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="/history"
+              element={
+                <RequireAuth>
+                  <History />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="/profile"
+              element={
+                <RequireAuth>
+                  <Profile />
+                </RequireAuth>
+              }
+            />
             <Route path="/login" element={<Login />} />
           </Routes>
         </div>

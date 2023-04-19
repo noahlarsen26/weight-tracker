@@ -1,8 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 function Navbar({ onClick }) {
+  const { currentUser } = useContext(AuthContext);
+  const { dispatch } = useContext(AuthContext);
   return (
     <nav className="navbar">
       <button onClick={onClick} className="hamburger-btn">
@@ -12,7 +16,16 @@ function Navbar({ onClick }) {
         <CustomLink to={"/"}>Current Data</CustomLink>
         <CustomLink to={"/history"}>History</CustomLink>
         <CustomLink to={"/profile"}>Profile</CustomLink>
-        <CustomLink to={"/login"}>Log In</CustomLink>
+        {currentUser ? (
+          <CustomLink
+            onClick={() => dispatch({ type: "LOGOUT" })}
+            to={"/login"}
+          >
+            Log Out
+          </CustomLink>
+        ) : (
+          <CustomLink to={"/login"}>Log In</CustomLink>
+        )}
       </ul>
     </nav>
   );

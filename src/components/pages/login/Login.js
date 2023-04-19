@@ -6,6 +6,7 @@ import { auth } from "../../../firebase";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthContext";
+import { Link } from "react-router-dom";
 
 function Login() {
   // const { email, setEmail, password, setPassword } = useContext(FormContext);
@@ -15,7 +16,6 @@ function Login() {
 
   const navigate = useNavigate();
 
-  const { currentUser } = useContext(AuthContext);
   const { dispatch } = useContext(AuthContext);
 
   function handleLogin(e) {
@@ -65,6 +65,12 @@ function Login() {
           <button className="btn">login</button>
         </div>
       </form>
+      <h3>
+        need an account?{" "}
+        <span>
+          <Link to="/register">sign up</Link>
+        </span>
+      </h3>
     </section>
   );
 }

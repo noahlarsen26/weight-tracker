@@ -9,6 +9,7 @@ import { useLocalStorage } from "./components/hooks/useLocalStorage";
 import Sidebar from "./components/Sidebar";
 import { useState } from "react";
 import { AuthContext } from "./context/AuthContext";
+import Register from "./components/pages/login/Register";
 export const FormContext = React.createContext();
 
 function App() {
@@ -103,6 +104,7 @@ function App() {
                 </RequireAuth>
               }
             />
+            <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
           </Routes>
         </div>

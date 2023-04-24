@@ -1,7 +1,7 @@
-function FormInput({ htmlFor, children, value, onChange, type, name, id }) {
+function FormInput({ label, children, value, onChange, type, name, id }) {
   return (
     <div>
-      <label htmlFor={htmlFor}>{children}</label>
+      <label label={label}>{children}</label>
       <input
         required
         value={value}

@@ -10,6 +10,7 @@ import Sidebar from "./components/Sidebar";
 import { useState } from "react";
 import { AuthContext } from "./context/AuthContext";
 import Register from "./components/pages/login/Register";
+import { profileInputs, weightInputs } from "./formSource";
 export const FormContext = React.createContext();
 
 function App() {
@@ -100,11 +101,22 @@ function App() {
               path="/profile"
               element={
                 <RequireAuth>
-                  <Profile />
+                  <Profile
+                    profileInputs={profileInputs}
+                    weightInputs={weightInputs}
+                  />
                 </RequireAuth>
               }
             />
-            <Route path="/register" element={<Register />} />
+            <Route
+              path="/register"
+              element={
+                <Register
+                  profileInputs={profileInputs}
+                  weightInputs={weightInputs}
+                />
+              }
+            />
             <Route path="/login" element={<Login />} />
           </Routes>
         </div>

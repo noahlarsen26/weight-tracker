@@ -1,33 +1,40 @@
 import FormInput from "../profile/FormInput";
-import { useContext } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../../firebase";
+import { auth, db } from "../../../firebase";
 import { useState } from "react";
+import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../../context/AuthContext";
 
-function Register() {
+function Register({ profileInputs, weightInputs }) {
   const [error, setError] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
 
-  const { dispatch } = useContext(AuthContext);
+  const [data, setData] = useState({});
 
-  function handleRegister(e) {
+  function handleInput(e) {
+    const id = e.target.id;
+    const value = e.target.value;
+
+    setData({ ...data, [id]: value });
+  }
+
+  async function handleRegister(e) {
     e.preventDefault();
-
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        dispatch({ type: "LOGIN", payload: user });
-        navigate("/");
-      })
-      .catch((error) => {
-        setError(true);
+    try {
+      const res = await createUserWithEmailAndPassword(auth, email, password);
+      await setDoc(doc(db, "users", res.user.uid), {
+        email,
+        password,
+        ...data,
+        timeStamp: serverTimestamp(),
       });
+      navigate("/login");
+    } catch (error) {
+      setError(true);
+    }
   }
   return (
     <section className="login-page">
@@ -36,32 +43,60 @@ function Register() {
           <h2>register</h2>
         </div>
       </header>
-      <form onSubmit={handleRegister} className="login">
-        <div className="login-container">
-          <FormInput
-            htmlFor={"email"}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            type={"email"}
-            name={"email"}
-            id={"email"}
-          >
-            email
-          </FormInput>
-          <FormInput
-            htmlFor={"password"}
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            type={"password"}
-            name={"password"}
-            id={"password"}
-          >
-            password
-          </FormInput>
-          {error && <h3 className="error">invalid email or password</h3>}
-          <button className="btn">register</button>
+      <form onSubmit={handleRegister} className="register">
+        <div className="register-container">
+          <div className="inputs">
+            <div className="profile-inputs register-inputs">
+              <FormInput
+                label={"email"}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                type={"email"}
+                id={"email"}
+              >
+                email
+              </FormInput>
+              {profileInputs.map((input) => (
+                <FormInput
+                  htmlFor={input.htmlFor}
+                  onChange={handleInput}
+                  type={input.type}
+                  id={input.id}
+                  key={input.id}
+                >
+                  {input.label}
+                </FormInput>
+              ))}
+            </div>
+            <div className="weight-inputs register-inputs">
+              <FormInput
+                label={"password"}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                type={"password"}
+                id={"password"}
+              >
+                password
+              </FormInput>
+              {weightInputs.map((input) => (
+                <FormInput
+                  htmlFor={input.htmlFor}
+                  onChange={handleInput}
+                  type={input.type}
+                  id={input.id}
+                  key={input.id}
+                >
+                  {input.label}
+                </FormInput>
+              ))}
+            </div>
+          </div>
+          <button className="btn" type="submit">
+            register
+          </button>
         </div>
       </form>
+      {error && <h3 className="error">invalid email or password</h3>}
     </section>
   );
 }

@@ -1,29 +1,50 @@
-import FormInput from "./FormInput";
-import { useContext } from "react";
-import { FormContext } from "../../../App";
+import { useState } from "react";
+import { updateDoc, setDoc, doc, serverTimestamp } from "firebase/firestore";
+import { db } from "../../../firebase";
+import Form from "./Form";
+import { getAuth, updateProfile, onAuthStateChanged } from "firebase/auth";
 
-function Profile() {
-  const {
-    firstName,
-    lastName,
-    startingWeight,
-    // currentWeight,
-    startingDate,
-    meters,
-    goalWeight,
-    goalDate,
-    setFirstName,
-    setLastName,
-    setStartingWeight,
-    // setCurrentWeight,
-    setStartingDate,
-    setMeters,
-    setGoalWeight,
-    setGoalDate,
-    birthDate,
-    setBirthDate,
-    // closeFormHandler,
-  } = useContext(FormContext);
+function Profile({ profileInputs, weightInputs }) {
+  const [data, setData] = useState({});
+
+  function handleInput(e) {
+    const id = e.target.id;
+    const value = e.target.value;
+
+    setData({ ...data, [id]: value });
+  }
+  console.log(data);
+
+  function handleAdd(e) {
+    e.preventDefault();
+
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // get user id
+        const userRef = doc(db, "users", user.uid);
+        // update data
+        updateDoc(userRef, {
+          ...data,
+        });
+      } else {
+        console.log("User not logged in or has just logged out.");
+      }
+    });
+  }
+
+  // async function handleAdd(e) {
+  //   e.preventDefault();
+  //   try {
+  //     await setDoc(doc(db, "users"), {
+  //       ...data,
+  //       timeStamp: serverTimestamp(),
+  //     });
+  //     // navigate("/profile");
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
   return (
     <>
       <header className="form-heading">
@@ -33,113 +54,19 @@ function Profile() {
         <div className="input-form-container">
           <div className="profile-details-container placeholderClass">
             <h3>profile details</h3>
-            <form
-              className="form profile-details"
-              onSubmit={(e) => {
-                e.preventDefault();
-              }}
-            >
-              <div className="form-container">
-                <div className="input-container">
-                  <FormInput
-                    htmlFor={"first-name"}
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
-                    type={"text"}
-                    name={"first-name"}
-                    id={"first-name"}
-                  >
-                    first name:
-                  </FormInput>
-                  <FormInput
-                    htmlFor={"last-name"}
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
-                    type={"text"}
-                    name={"last-name"}
-                    id={"last-name"}
-                  >
-                    last name:
-                  </FormInput>
-                  <FormInput
-                    htmlFor={"birthdate"}
-                    value={birthDate}
-                    onChange={(e) => setBirthDate(e.target.value)}
-                    type={"date"}
-                    name={"birthdate"}
-                    id={"birthdate"}
-                  >
-                    date of birth:
-                  </FormInput>
-                  <FormInput
-                    htmlFor={"meters"}
-                    value={meters}
-                    onChange={(e) => setMeters(e.target.value)}
-                    type={"text"}
-                    name={"meters"}
-                    id={"meters"}
-                  >
-                    height (centimeters):
-                  </FormInput>
-                  <button className="btn">submit</button>
-                </div>
-              </div>
-            </form>
+            <Form
+              onSubmit={handleAdd}
+              onChange={handleInput}
+              inputs={profileInputs}
+            />
           </div>
           <div className="weight-objective-container placeholderClass">
             <h3>weight objectives</h3>
-            <form
-              className="form weight-objectives"
-              onSubmit={(e) => {
-                e.preventDefault();
-              }}
-            >
-              <div className="form-container">
-                <div className="input-container">
-                  <FormInput
-                    htmlFor={"starting-weight"}
-                    value={startingWeight}
-                    onChange={(e) => setStartingWeight(e.target.value)}
-                    type={"number"}
-                    name={"starting-weight"}
-                    id={"starting-weight"}
-                  >
-                    starting weight (kilograms):
-                  </FormInput>
-                  <FormInput
-                    htmlFor={"start-goal-date"}
-                    value={startingDate}
-                    onChange={(e) => setStartingDate(e.target.value)}
-                    type={"date"}
-                    name={"start-goal-date"}
-                    id={"start-goal-date"}
-                  >
-                    starting date:
-                  </FormInput>
-                  <FormInput
-                    htmlFor={"start-goal-weight"}
-                    value={goalDate}
-                    onChange={(e) => setGoalDate(e.target.value)}
-                    type={"date"}
-                    name={"start-goal-weight"}
-                    id={"start-goal-weight"}
-                  >
-                    goal date:
-                  </FormInput>
-                  <FormInput
-                    htmlFor={"end-goal-weight"}
-                    value={goalWeight}
-                    onChange={(e) => setGoalWeight(e.target.value)}
-                    type={"number"}
-                    name={"end-goal-weight"}
-                    id={"end-goal-weight"}
-                  >
-                    goal weight (kilograms):
-                  </FormInput>
-                  <button className="btn">submit</button>
-                </div>
-              </div>
-            </form>
+            <Form
+              onSubmit={handleAdd}
+              onChange={handleInput}
+              inputs={weightInputs}
+            />
           </div>
         </div>
       </section>

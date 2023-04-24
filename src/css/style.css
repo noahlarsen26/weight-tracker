@@ -12,7 +12,6 @@ body {
   color: #f4f4f4;
   font-family: "Roboto", sans-serif;
   background: linear-gradient(to top, rgb(74, 71, 71), rgb(0, 0, 0));
-  overflow: hidden;
 }
 
 .start,
@@ -575,7 +574,7 @@ aside nav .side-nav li a {
   margin-top: 0;
   height: 100%;
 }
-.login-page .login {
+.login-page .login, .login-page .register {
   height: 50%;
   width: 50%;
   margin: 0 auto;
@@ -584,16 +583,16 @@ aside nav .side-nav li a {
   position: relative;
 }
 @media (max-width: 760px) {
-  .login-page .login {
+  .login-page .login, .login-page .register {
     width: 25rem;
   }
 }
 @media (max-width: 470px) {
-  .login-page .login {
+  .login-page .login, .login-page .register {
     width: 20rem;
   }
 }
-.login-page .login .login-container {
+.login-page .login-container, .login-page .register-container {
   position: relative;
   position: absolute;
   top: 50%;
@@ -606,23 +605,23 @@ aside nav .side-nav li a {
   flex-direction: column;
   justify-content: space-between;
 }
-.login-page .login .login-container div {
+.login-page .login-container div, .login-page .register-container div {
   width: 100%;
 }
-.login-page .login .login-container div label {
+.login-page .login-container div label, .login-page .register-container div label {
   display: block;
   margin-bottom: 0.75rem;
 }
-.login-page .login .login-container div input {
+.login-page .login-container div input, .login-page .register-container div input {
   width: 100%;
   height: 2rem;
   border-radius: 5px;
   background: gray;
 }
-.login-page .login .login-container div:nth-of-type(2) {
+.login-page .login-container div:nth-of-type(2), .login-page .register-container div:nth-of-type(2) {
   height: 7rem;
 }
-.login-page .login .login-container .error {
+.login-page .login-container .error, .login-page .register-container .error {
   color: red;
   font-weight: bold;
   position: absolute;
@@ -632,10 +631,10 @@ aside nav .side-nav li a {
   width: 100%;
   text-align: center;
 }
-.login-page .login .login-container .btn {
+.login-page .login-container .btn, .login-page .register-container .btn {
   text-transform: capitalize;
   height: 2rem;
-  width: 100%;
+  width: 95%;
   background: blue;
   color: #f4f4f4;
   border: none;
@@ -644,6 +643,50 @@ aside nav .side-nav li a {
   cursor: pointer;
   font-size: 1rem;
   letter-spacing: 1.5px;
+  margin-top: 1rem;
+}
+.login-page .register {
+  height: 65%;
+}
+@media (max-width: 920px) {
+  .login-page .register {
+    font-size: 0.75rem;
+  }
+}
+.login-page .register-container .inputs {
+  display: flex;
+  height: calc(100% - 2rem);
+}
+.login-page .register-container .inputs .register-inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: space-between;
+  height: 100%;
+}
+.login-page .register-container .inputs .register-inputs label {
+  margin: 0;
+}
+.login-page .register-container .inputs .register-inputs input {
+  width: 90%;
+}
+@media (max-width: 920px) {
+  .login-page .register-container .inputs .register-inputs input {
+    height: 1.75rem;
+  }
+}
+.login-page .register-container .inputs .register-inputs input[type=date]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}
+.login-page .register-container .inputs .register-inputs > :nth-child(2) {
+  height: auto;
+}
+.login-page .register-container .inputs .weight-inputs {
+  height: auto;
+}
+.login-page .register + .error {
+  color: red;
+  font-weight: bold;
 }
 .login-page h3 {
   text-align: center;

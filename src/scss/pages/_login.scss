@@ -31,7 +31,7 @@
     @include respond-to("medium") {
       width: 20rem;
     }
-    .login-container {
+    &-container {
       position: relative;
       position: absolute;
       top: 50%;
@@ -72,7 +72,7 @@
       .btn {
         text-transform: capitalize;
         height: 2rem;
-        width: 100%;
+        width: 95%;
         background: blue;
         color: $light-color;
         border: none;
@@ -81,8 +81,52 @@
         cursor: pointer;
         font-size: 1rem;
         letter-spacing: 1.5px;
+        margin-top: 1rem;
       }
     }
+  }
+  .register {
+    @extend .login;
+    height: 65%;
+    @include respond-to("biggest") {
+      font-size: 0.75rem;
+    }
+    &-container {
+      @extend .login-container;
+      .inputs {
+        display: flex;
+        height: calc(100% - 2rem);
+        .register-inputs {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: space-between;
+          height: 100%;
+          label {
+            margin: 0;
+          }
+          input {
+            width: 90%;
+            @include respond-to("biggest") {
+              height: 1.75rem;
+            }
+          }
+          input[type="date"]::-webkit-calendar-picker-indicator {
+            cursor: pointer;
+          }
+        }
+        .register-inputs > :nth-child(2) {
+          height: auto;
+        }
+        .weight-inputs {
+          height: auto;
+        }
+      }
+    }
+  }
+  .register + .error {
+    color: red;
+    font-weight: bold;
   }
   h3 {
     text-align: center;

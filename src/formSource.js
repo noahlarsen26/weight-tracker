@@ -50,15 +50,15 @@ export const registerInputs = [
 ];
 export const profileInputs = [
   {
-    htmlFor: "first-name",
+    htmlFor: "firstName",
     type: "text",
-    id: "first-name",
+    id: "firstName",
     label: "first name",
   },
   {
-    htmlFor: "last-name",
+    htmlFor: "lastName",
     type: "text",
-    id: "last-name",
+    id: "lastName",
     label: "last name",
   },
   {
@@ -76,27 +76,27 @@ export const profileInputs = [
 ];
 export const weightInputs = [
   {
-    htmlFor: "starting-weight",
+    htmlFor: "startWeight",
     type: "number",
-    id: "starting-weight",
+    id: "startWeight",
     label: "starting weight (kgs):",
   },
   {
-    htmlFor: "start-goal-date",
+    htmlFor: "startDate",
     type: "date",
-    id: "start-goal-date",
+    id: "startDate",
     label: "starting date:",
   },
   {
-    htmlFor: "goal-date",
+    htmlFor: "goalDate",
     type: "date",
-    id: "goal-date",
+    id: "goalDate",
     label: "goal date:",
   },
   {
-    htmlFor: "end-goal-weight",
+    htmlFor: "goalWeight",
     type: "number",
-    id: "end-goal-weight",
+    id: "goalWeight",
     label: "goal weight (kgs):",
   },
 ];

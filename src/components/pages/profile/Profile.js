@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { updateDoc, setDoc, doc, serverTimestamp } from "firebase/firestore";
+import { updateDoc, doc } from "firebase/firestore";
 import { db } from "../../../firebase";
 import Form from "./Form";
-import { getAuth, updateProfile, onAuthStateChanged } from "firebase/auth";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 function Profile({ profileInputs, weightInputs }) {
   const [data, setData] = useState({});
@@ -32,19 +32,6 @@ function Profile({ profileInputs, weightInputs }) {
       }
     });
   }
-
-  // async function handleAdd(e) {
-  //   e.preventDefault();
-  //   try {
-  //     await setDoc(doc(db, "users"), {
-  //       ...data,
-  //       timeStamp: serverTimestamp(),
-  //     });
-  //     // navigate("/profile");
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }
   return (
     <>
       <header className="form-heading">

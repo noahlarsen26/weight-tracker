@@ -8,7 +8,6 @@ import { AuthContext } from "../../../context/AuthContext";
 import { Link } from "react-router-dom";
 
 function Login() {
-  // const { email, setEmail, password, setPassword } = useContext(FormContext);
   const [error, setError] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

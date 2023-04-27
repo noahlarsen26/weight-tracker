@@ -1,39 +1,60 @@
 import React, { useState, useEffect } from "react";
 import Tracker from "./Tracker";
 import { useContext } from "react";
-import { FormContext } from "../../../App";
 import WeightSlider from "../../WeightSlider";
+import { AuthContext } from "../../../context/AuthContext";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { db } from "../../../firebase";
 
 function CurrentData() {
-  const { firstName, lastName } = useContext(FormContext);
-  // placeholder
   const [weightForm, setWeightForm] = useState(false);
-  // placeholder
 
-  const [formIsOpen, setFormIsOpen] = useState(true);
-  // CLOSE FORM
-  function closeFormHandler() {
-    setFormIsOpen(false);
-    // window.location.reload(true);
-  }
-  // OPEN FORM
-  function openFormHandler() {
-    setFormIsOpen(true);
-  }
-  // SAVE IF FORM IS OPEN TO LOCALSTORAGE
+  const { currentUser } = useContext(AuthContext);
+
+  const email = currentUser.email;
+
+  const [user, setUser] = useState({});
+
+  const userDocRef = doc(db, "users", currentUser.uid);
+
+  const [value, setValue] = useState(user.currentWeight ? true : 70);
   useEffect(() => {
-    setFormIsOpen(JSON.parse(window.localStorage.getItem("Form Is Open")));
+    async function getUserData() {
+      const snap = await getDoc(userDocRef);
+      setUser({ email, ...snap.data() });
+    }
+    getUserData();
   }, []);
-  useEffect(() => {
-    window.localStorage.setItem("Form Is Open", formIsOpen);
-  }, [formIsOpen]);
+
+  async function updateWeight(e) {
+    e.preventDefault();
+
+    await updateDoc(userDocRef, {
+      currentWeight: value,
+    });
+    setWeightForm(false);
+    window.location.reload();
+  }
+
+  function getBackgroundSize() {
+    return { backgroundSize: `${(value * 100) / 150}% 100%` };
+  }
   return (
     <>
-      {weightForm && <WeightSlider onClick={() => setWeightForm(false)} />}
+      {weightForm && (
+        <WeightSlider
+          onChange={(e) => setValue(e.target.valueAsNumber)}
+          getBackgroundSize={getBackgroundSize}
+          // user={user}
+          onSubmit={updateWeight}
+          onClick={() => setWeightForm(false)}
+          value={value}
+        />
+      )}
       <h1 className="name">
-        {firstName} {lastName}
+        {user.firstName} {user.lastName}
       </h1>
-      <Tracker weightForm={() => setWeightForm(true)} />
+      <Tracker user={user} weightForm={() => setWeightForm(true)} />
       <div className="back-filler">
         <div className="back-filler-1"></div>
       </div>

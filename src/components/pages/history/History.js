@@ -18,11 +18,7 @@ function History() {
           <section className="progress-bar-container">
             <h3>progress</h3>
             <div className="progress-bar">
-              <div
-                style={{ width: "90%" }}
-                // style={{ width: `${Math.floor(progress)}%` }}
-                className="progress"
-              ></div>
+              <div style={{ width: "90%" }} className="progress"></div>
             </div>
             <div>{/* <h3>{Math.floor(progress)}%</h3> */}</div>
           </section>

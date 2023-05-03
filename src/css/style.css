@@ -319,12 +319,12 @@ aside nav .side-nav li a {
   font-weight: bold;
   font-size: 1.25rem;
 }
-@media (max-width: 760px) {
+@media (max-width: 920px) {
   .history .history-container .input-history {
     font-size: 1rem;
   }
 }
-@media (max-width: 470px) {
+@media (max-width: 530px) {
   .history .history-container .input-history {
     font-size: 0.75rem;
   }
@@ -332,12 +332,12 @@ aside nav .side-nav li a {
 .history .history-container .input-history .weight-container .difference {
   font-size: 1rem;
 }
-@media (max-width: 760px) {
+@media (max-width: 920px) {
   .history .history-container .input-history .weight-container .difference {
     font-size: 0.75rem;
   }
 }
-@media (max-width: 470px) {
+@media (max-width: 530px) {
   .history .history-container .input-history .weight-container .difference {
     font-size: 0.5rem;
   }
@@ -347,12 +347,12 @@ aside nav .side-nav li a {
   text-transform: capitalize;
   text-align: center;
 }
-@media (max-width: 760px) {
+@media (max-width: 920px) {
   .history .history-container .input-history .progress-bar-container {
     width: 15rem;
   }
 }
-@media (max-width: 530px) {
+@media (max-width: 670px) {
   .history .history-container .input-history .progress-bar-container {
     width: 10rem;
   }
@@ -361,7 +361,7 @@ aside nav .side-nav li a {
   background: lightgray;
   height: 1rem;
 }
-@media (max-width: 470px) {
+@media (max-width: 530px) {
   .history .history-container .input-history .progress-bar-container .progress-bar {
     height: 0.5rem;
     width: 7rem;
@@ -387,6 +387,7 @@ aside nav .side-nav li a {
   height: 3rem;
   font-size: 2.25rem;
   width: 100%;
+  text-transform: capitalize;
 }
 .container .tracker {
   display: flex;

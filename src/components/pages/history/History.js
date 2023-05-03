@@ -8,7 +8,9 @@ function History({ user }) {
   const [data, setData] = useState([]);
 
   const goalWeight = user.goalWeight;
+  const firstName = user.firstName;
   const { currentUser } = useContext(AuthContext);
+
   useEffect(() => {
     async function fetchData() {
       let list = [];
@@ -34,7 +36,7 @@ function History({ user }) {
           <h2>history</h2>
         </div>
         <div className="first-name">
-          <h3>{user.firstName}</h3>
+          <h3>{firstName}</h3>
         </div>
       </header>
       <ul className="history-container">

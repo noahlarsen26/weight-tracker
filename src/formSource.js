@@ -73,6 +73,12 @@ export const profileInputs = [
     id: "height",
     label: "height (cm):",
   },
+  // {
+  //   htmlFor: "gender",
+  //   type: "text",
+  //   id: "gender",
+  //   label: "gender:",
+  // },
 ];
 export const weightInputs = [
   {
@@ -87,6 +93,12 @@ export const weightInputs = [
     id: "startDate",
     label: "starting date:",
   },
+  // {
+  //   htmlFor: "currentWeight",
+  //   type: "number",
+  //   id: "currentWeight",
+  //   label: "current weight:",
+  // },
   {
     htmlFor: "goalDate",
     type: "date",

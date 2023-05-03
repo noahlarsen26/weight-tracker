@@ -31,6 +31,10 @@ function Register({ profileInputs, weightInputs }) {
         ...data,
         timeStamp: serverTimestamp(),
       });
+      await setDoc(doc(db, "users", res.user.uid, "history", res.user.uid), {
+        ...data,
+        timeStamp: serverTimestamp(),
+      });
       navigate("/login");
     } catch (error) {
       setError(true);

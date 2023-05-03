@@ -9,6 +9,7 @@ function Overview({ user }) {
   const goalWeight = parseFloat(user.goalWeight);
   const startDate = user.startDate;
   const goalDate = user.goalDate;
+  const currentWeight = user.currentWeight;
 
   // CALCULATE BMI
   useEffect(() => {
@@ -35,7 +36,7 @@ function Overview({ user }) {
       <div className="current-weight">
         <div className="circle">
           <h2>
-            {user.currentWeight} <span>kgs</span>
+            {currentWeight} <span>kgs</span>
           </h2>
         </div>
       </div>

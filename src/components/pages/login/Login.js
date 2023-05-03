@@ -26,7 +26,7 @@ function Login() {
         dispatch({ type: "LOGIN", payload: user });
         navigate("/");
       })
-      .catch((error) => {
+      .catch(() => {
         setError(true);
       });
   }

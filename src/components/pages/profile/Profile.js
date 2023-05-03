@@ -13,7 +13,6 @@ function Profile({ profileInputs, weightInputs }) {
 
     setData({ ...data, [id]: value });
   }
-  console.log(data);
 
   function handleAdd(e) {
     e.preventDefault();

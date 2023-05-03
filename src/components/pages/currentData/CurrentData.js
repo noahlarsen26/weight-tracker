@@ -47,7 +47,6 @@ function CurrentData({ user }) {
         <WeightSlider
           onChange={(e) => setValue(e.target.valueAsNumber)}
           getBackgroundSize={getBackgroundSize}
-          // user={user}
           onSubmit={updateWeight}
           onClick={() => setWeightForm(false)}
           value={value}

@@ -16,7 +16,6 @@ function Tracker({ weightForm, user }) {
       <CurrentBmi user={user} />
       <section className="enter-weight">
         <EnterWeightBtn
-          // onClick={openFormHandler}
           onClick={weightForm}
           divClassName={"enter-weight-btn"}
           btnClassName={"weight-btn"}

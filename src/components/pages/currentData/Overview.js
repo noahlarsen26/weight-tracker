@@ -1,31 +1,26 @@
 import { useState, useEffect } from "react";
-import { useContext } from "react";
-import { FormContext } from "../../../App";
 
-function Overview() {
-  const {
-    currentWeight,
-    meters,
-    startingWeight,
-    startingDate,
-    goalWeight,
-    goalDate,
-  } = useContext(FormContext);
-
+function Overview({ user }) {
   const [startingBMI, setStartingBMI] = useState(0);
   const [goalBMI, setGoalBMI] = useState(0);
 
+  const startWeight = parseFloat(user.startWeight);
+  const height = parseFloat(user.height);
+  const goalWeight = parseFloat(user.goalWeight);
+  const startDate = user.startDate;
+  const goalDate = user.goalDate;
+
   // CALCULATE BMI
   useEffect(() => {
-    setStartingBMI((startingWeight / (meters * meters)) * 10000);
-    setGoalBMI((goalWeight / (meters * meters)) * 10000);
-  }, []);
+    setStartingBMI((startWeight / (height * height)) * 10000);
+    setGoalBMI((goalWeight / (height * height)) * 10000);
+  }, [goalBMI, startingBMI, goalWeight]);
 
   return (
     <section className="overview">
       <ul className="start">
         <li>
-          <h3>{startingWeight} kgs</h3>
+          <h3>{startWeight} kgs</h3>
         </li>
         <li>
           <h3>
@@ -34,13 +29,13 @@ function Overview() {
           </h3>
         </li>
         <li>
-          <h3>{startingDate}</h3>
+          <h3>{startDate}</h3>
         </li>
       </ul>
       <div className="current-weight">
         <div className="circle">
           <h2>
-            {currentWeight} <span>kgs</span>
+            {user.currentWeight} <span>kgs</span>
           </h2>
         </div>
       </div>

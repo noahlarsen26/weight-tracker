@@ -1,30 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Tracker from "./Tracker";
 import { useContext } from "react";
 import WeightSlider from "../../WeightSlider";
 import { AuthContext } from "../../../context/AuthContext";
-import { doc, getDoc, updateDoc } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  doc,
+  serverTimestamp,
+  updateDoc,
+} from "firebase/firestore";
 import { db } from "../../../firebase";
 
-function CurrentData() {
+function CurrentData({ user }) {
   const [weightForm, setWeightForm] = useState(false);
 
   const { currentUser } = useContext(AuthContext);
 
-  const email = currentUser.email;
-
-  const [user, setUser] = useState({});
-
   const userDocRef = doc(db, "users", currentUser.uid);
+  const historyRef = collection(userDocRef, "history");
 
-  const [value, setValue] = useState(user.currentWeight ? true : 70);
-  useEffect(() => {
-    async function getUserData() {
-      const snap = await getDoc(userDocRef);
-      setUser({ email, ...snap.data() });
-    }
-    getUserData();
-  }, []);
+  const [value, setValue] = useState(user.currentWeight);
 
   async function updateWeight(e) {
     e.preventDefault();
@@ -32,10 +28,16 @@ function CurrentData() {
     await updateDoc(userDocRef, {
       currentWeight: value,
     });
+
+    await addDoc(historyRef, {
+      currentWeight: value,
+      difference: user.currentWeight - value,
+      timestamp: serverTimestamp(),
+    });
+
     setWeightForm(false);
     window.location.reload();
   }
-
   function getBackgroundSize() {
     return { backgroundSize: `${(value * 100) / 150}% 100%` };
   }

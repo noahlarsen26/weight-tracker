@@ -1,16 +1,13 @@
 import { useState, useEffect } from "react";
-import { useContext } from "react";
-import { FormContext } from "../../../App";
 
-function CurrentBmi() {
-  const { currentWeight, meters } = useContext(FormContext);
-
+function CurrentBmi({ user }) {
   const [currentBMI, setCurrentBMI] = useState(0);
   const [BMI, setBMI] = useState("");
-
+  const height = user.height;
+  const currentWeight = user.currentWeight;
   // CALCULATE BMI
   useEffect(() => {
-    setCurrentBMI((currentWeight / (meters * meters)) * 10000);
+    setCurrentBMI((currentWeight / height / height) * 10000);
 
     // SET BMI LABEL
     if (currentBMI < 18.5) {
@@ -26,7 +23,7 @@ function CurrentBmi() {
     } else {
       setBMI("obese class 3");
     }
-  }, [currentBMI, currentWeight]);
+  }, [currentBMI, currentWeight, height]);
 
   return (
     <section className="current-bmi">

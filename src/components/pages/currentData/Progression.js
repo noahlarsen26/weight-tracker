@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
-import { useContext } from "react";
-import { FormContext } from "../../../App";
 
-function Progression() {
-  const { currentWeight, startingWeight, goalWeight } = useContext(FormContext);
+function Progression({ user }) {
+  const startWeight = user.startWeight;
+  const currentWeight = user.currentWeight;
+  const goalWeight = user.goalWeight;
 
-  const [totalLost, setTotalLost] = useState(startingWeight);
+  const [totalLost, setTotalLost] = useState(startWeight);
   const [remainingKgs, setRemainingKgs] = useState(currentWeight);
 
   // CALCULATE TOTAL LOST
   useEffect(() => {
-    setTotalLost(startingWeight - currentWeight);
+    setTotalLost(startWeight - currentWeight);
     setRemainingKgs(currentWeight - goalWeight);
   }, [currentWeight, goalWeight]);
 

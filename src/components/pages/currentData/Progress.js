@@ -1,16 +1,15 @@
 import { useState, useEffect } from "react";
-import { useContext } from "react";
-import { FormContext } from "../../../App";
 
-function Progress() {
-  const { goalWeight, currentWeight } = useContext(FormContext);
+function Progress({ user }) {
+  const [progress, setProgress] = useState();
 
-  const [progress, setProgress] = useState(goalWeight);
+  const goalWeight = user.goalWeight;
+  const currentWeight = user.currentWeight;
 
   // CALCULATE PROGRESS
   useEffect(() => {
     setProgress((goalWeight / currentWeight) * 100);
-  }, [currentWeight]);
+  }, [goalWeight, currentWeight]);
 
   return (
     <section className="progress-container">

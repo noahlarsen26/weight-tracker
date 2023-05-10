@@ -28,7 +28,7 @@ function Progression({ user }) {
       </div>{" "}
       <div>
         <h3>remaining</h3>
-        <h3>{remainingKgs} kgs</h3>
+        {remainingKgs ? <h3>{remainingKgs} kgs</h3> : <h3>No Data</h3>}
       </div>{" "}
     </section>
   );

@@ -1,4 +1,3 @@
-import React, { useContext } from "react";
 import Navbar from "./components/Navbar";
 import CurrentData from "./components/pages/currentData/CurrentData";
 import { Route, Routes, Navigate } from "react-router-dom";
@@ -6,7 +5,7 @@ import Login from "./components/pages/login/Login";
 import History from "./components/pages/history/History";
 import Profile from "./components/pages/profile/Profile";
 import Sidebar from "./components/Sidebar";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
 import Register from "./components/pages/login/Register";
 import { profileInputs, weightInputs } from "./formSource";
@@ -20,13 +19,10 @@ function App() {
   const [sidebar, setSidebar] = useState(false);
   const [user, setUser] = useState({});
 
-  const email = currentUser.email;
-  const userDocRef = doc(db, "users", currentUser.uid);
-
   useEffect(() => {
     async function getUserData() {
-      const snap = await getDoc(userDocRef);
-      setUser({ email, ...snap.data() });
+      const snap = await getDoc(doc(db, "users", currentUser.uid));
+      setUser({ ...snap.data() });
     }
     getUserData();
   }, []);

@@ -29,7 +29,7 @@ function CurrentBmi({ user }) {
     <section className="current-bmi">
       <h3>
         <span className="bmi">bmi: </span>
-        {Math.floor(currentBMI)}
+        {currentBMI ? Math.floor(currentBMI) : "No Data"}
       </h3>
       <h3>{BMI}</h3>
     </section>

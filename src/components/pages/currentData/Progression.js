@@ -18,9 +18,13 @@ function Progression({ user }) {
     <section className="progression">
       <div>
         <h3>you lost</h3>
-        <h3>
-          {totalLost} <span>kgs</span>
-        </h3>
+        {totalLost ? (
+          <h3>
+            {totalLost} <span>kgs</span>
+          </h3>
+        ) : (
+          <h3>No Data</h3>
+        )}
       </div>{" "}
       <div>
         <h3>remaining</h3>

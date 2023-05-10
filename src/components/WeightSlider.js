@@ -20,14 +20,14 @@ function WeightSlider({
             <input
               type="range"
               max={150}
-              value={value}
+              value={value ? value : 75}
               onChange={onChange}
               style={getBackgroundSize()}
             />
           </div>
           <div className="weight-value">
             <p>
-              {value}
+              {value ? value : 75}
               <span>kgs</span>
             </p>
           </div>

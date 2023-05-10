@@ -35,9 +35,16 @@ function Overview({ user }) {
       </ul>
       <div className="current-weight">
         <div className="circle">
-          <h2>
+          {currentWeight ? (
+            <h2>
+              {currentWeight} <span>kgs</span>
+            </h2>
+          ) : (
+            <h2>no data</h2>
+          )}
+          {/* <h2>
             {currentWeight} <span>kgs</span>
-          </h2>
+          </h2> */}
         </div>
       </div>
       <ul className="goals">

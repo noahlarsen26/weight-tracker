@@ -40,11 +40,8 @@ function Overview({ user }) {
               {currentWeight} <span>kgs</span>
             </h2>
           ) : (
-            <h2>no data</h2>
+            <h2>No Data</h2>
           )}
-          {/* <h2>
-            {currentWeight} <span>kgs</span>
-          </h2> */}
         </div>
       </div>
       <ul className="goals">

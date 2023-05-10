@@ -10,18 +10,30 @@ function Progress({ user }) {
   useEffect(() => {
     setProgress((goalWeight / currentWeight) * 100);
   }, [goalWeight, currentWeight]);
-
+  // function progressHandler() {
+  //   if (progress) {
+  //     const progressStyles = {
+  //       width: `${Math.floor(progress)}%`,
+  //     };
+  //   } else {
+  //     const progressStyles = {
+  //       width: "0rem",
+  //     };
+  //   }
+  // }
   return (
     <section className="progress-container">
       <h3>progress</h3>
       <div className="progress-bar">
         <div
-          style={{ width: `${Math.floor(progress)}%` }}
+          style={
+            progress ? { width: `${Math.floor(progress)}%` } : { width: "0rem" }
+          }
           className="progress"
         ></div>
       </div>
       <div>
-        <h3>{Math.floor(progress)}%</h3>
+        <h3>{progress ? Math.floor(progress) : "no data"}</h3>
       </div>
     </section>
   );

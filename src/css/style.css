@@ -109,21 +109,6 @@ body {
   }
 }
 
-.btn-container {
-  height: 2.5rem;
-}
-.btn-container .form-btn {
-  height: 100%;
-  width: 100%;
-  cursor: pointer;
-  font-size: 1.25rem;
-  background: blue;
-  color: #f4f4f4;
-}
-.btn-container .form-btn:hover {
-  background: #53628d;
-}
-
 .input-container {
   height: 100%;
   display: flex;

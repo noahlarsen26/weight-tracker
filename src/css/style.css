@@ -103,37 +103,31 @@ body {
   width: 90%;
   margin: 0 auto;
 }
-@media (max-width: 760px) {
-  .input-form-container .placeholderClass {
-    margin: 0;
-  }
-}
-
-.input-container {
+.input-form-container .placeholderClass .form .form-container .input-container {
   height: 100%;
   display: flex;
   flex-direction: column;
   text-transform: capitalize;
 }
-.input-container div {
+.input-form-container .placeholderClass .form .form-container .input-container div {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
 }
-.input-container div label {
+.input-form-container .placeholderClass .form .form-container .input-container div label {
   padding-top: 0.75rem;
   font-weight: bold;
   font-size: 1.25rem;
 }
 @media (max-width: 760px) {
-  .input-container div label {
+  .input-form-container .placeholderClass .form .form-container .input-container div label {
     font-size: 1rem;
     padding: 0;
     height: 1rem;
   }
 }
-.input-container div input {
+.input-form-container .placeholderClass .form .form-container .input-container div input {
   height: 2.75rem;
   display: block;
   background: none;
@@ -144,22 +138,22 @@ body {
   border-left: none;
   border-right: none;
   width: 100%;
-  font-size: 1.25rem;
+  font-size: 1rem;
   margin-bottom: 0.75rem;
 }
 @media (max-width: 760px) {
-  .input-container div input {
+  .input-form-container .placeholderClass .form .form-container .input-container div input {
     margin-bottom: 0.25rem;
     font-size: 0.75rem;
     height: 1rem;
   }
 }
-.input-container div input[type=date]::-webkit-calendar-picker-indicator {
+.input-form-container .placeholderClass .form .form-container .input-container div input[type=date]::-webkit-calendar-picker-indicator {
   cursor: pointer;
   filter: invert(1);
   font-size: 1rem;
 }
-.input-container .btn {
+.input-form-container .placeholderClass .form .form-container .input-container .btn {
   text-transform: capitalize;
   font-size: 1.25rem;
   font-weight: bold;
@@ -169,12 +163,12 @@ body {
   padding-block: 0.25rem;
 }
 @media (max-width: 760px) {
-  .input-container .btn {
+  .input-form-container .placeholderClass .form .form-container .input-container .btn {
     padding: 0;
     font-size: 1rem;
   }
 }
-.input-container .btn:hover {
+.input-form-container .placeholderClass .form .form-container .input-container .btn:hover {
   background: bisque;
 }
 
@@ -319,7 +313,7 @@ aside nav .side-nav li a {
 }
 @media (max-width: 920px) {
   .history .history-container .input-history .weight-container .difference {
-    font-size: 0.75rem;
+    font-size: 1.25rem;
   }
 }
 @media (max-width: 530px) {

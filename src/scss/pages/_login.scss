@@ -6,7 +6,7 @@
   text-transform: capitalize;
   header {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: $big-font;
     height: 3rem;
     margin-bottom: 5rem;
     padding-top: 2rem;
@@ -79,7 +79,7 @@
         border-radius: 5px;
         font-weight: bold;
         cursor: pointer;
-        font-size: 1rem;
+        font-size: $primary-font;
         letter-spacing: 1.5px;
         margin-top: 1rem;
       }
@@ -89,7 +89,7 @@
     @extend .login;
     height: 65%;
     @include respond-to("biggest") {
-      font-size: 0.75rem;
+      font-size: $small-font;
     }
     &-container {
       @extend .login-container;

@@ -35,7 +35,7 @@ aside {
       display: flex;
       flex-direction: column;
       justify-content: space-around;
-      font-size: 1.25rem;
+      font-size: $med-font;
       li a {
         text-decoration: none;
         cursor: pointer;

@@ -34,7 +34,7 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
-      font-size: $font-size;
+      font-size: $small-font;
       .current-weight {
         height: 90%;
         width: 35%;
@@ -53,14 +53,14 @@
             top: 35%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: $big-font-size;
+            font-size: $large-font;
             width: 100%;
             text-align: center;
             @include respond-to("medium") {
-              font-size: 1.5rem;
+              font-size: $big-font;
             }
             span {
-              font-size: $med-font-size;
+              font-size: $primary-font;
             }
           }
         }
@@ -72,7 +72,7 @@
       display: flex;
       align-items: center;
       justify-content: space-around;
-      font-size: $font-size;
+      font-size: $small-font;
       h3 {
         text-transform: capitalize;
       }
@@ -92,11 +92,11 @@
       color: yellow;
       text-align: center;
       border-top: $gray-border;
-      font-size: $font-size;
+      font-size: $small-font;
       height: 3rem;
       h2 {
         @include respond-to("medium") {
-          font-size: $form-font-size;
+          font-size: $med-font;
         }
       }
     }
@@ -104,7 +104,7 @@
       display: flex;
       justify-content: space-around;
       border-top: $gray-border;
-      font-size: $font-size;
+      font-size: $small-font;
       h3:first-of-type {
         text-transform: capitalize;
       }
@@ -114,7 +114,7 @@
       justify-content: space-around;
       align-items: center;
       border-top: $gray-border;
-      font-size: $font-size;
+      font-size: $small-font;
       height: 12%;
       h3:nth-of-type(2) {
         color: bisque;
@@ -136,13 +136,13 @@
           text-transform: capitalize;
           height: 75%;
           width: 50%;
-          font-size: $weight-btn-font;
+          font-size: $med-font;
           font-weight: bold;
           cursor: pointer;
           border-radius: 30px;
           border: none;
           @include respond-to("medium") {
-            font-size: $med-font-size;
+            font-size: $primary-font;
           }
           &:hover {
             background: bisque;

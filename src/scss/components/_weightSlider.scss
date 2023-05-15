@@ -17,7 +17,7 @@
   width: 25rem;
   position: absolute;
   padding: 1rem;
-  background: black;
+  @include set-background(black);
   border-radius: 10px;
   @include respond-to("medium") {
     width: 90%;
@@ -57,7 +57,7 @@
         appearance: none;
         height: 2em;
         border-radius: 5px;
-        background-image: linear-gradient(#d4b20b, #d4b20b);
+        background-image: $slider-gradient;
         background-repeat: no-repeat;
         background-color: gray;
       }
@@ -65,7 +65,7 @@
         appearance: none;
         width: 2.5rem;
         height: 2.5rem;
-        background-color: #d4b20b;
+        background-color: $slider-color;
         border-radius: 50%;
         border: solid 1px black;
         cursor: pointer;
@@ -84,7 +84,7 @@
       text-transform: capitalize;
       height: 2rem;
       width: 100%;
-      background: blue;
+      background: $primary-blue;
       color: $light-color;
       border: none;
       border-radius: 5px;

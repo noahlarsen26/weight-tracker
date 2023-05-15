@@ -717,7 +717,8 @@ aside nav .side-nav li a {
   width: 25rem;
   position: absolute;
   padding: 1rem;
-  background: black;
+  background-color: black;
+  color: #f4f4f4;
   border-radius: 10px;
 }
 @media (max-width: 470px) {
@@ -788,7 +789,7 @@ aside nav .side-nav li a {
   text-transform: capitalize;
   height: 2rem;
   width: 100%;
-  background: blue;
+  background: #0000ff;
   color: #f4f4f4;
   border: none;
   border-radius: 5px;

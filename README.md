@@ -1,14 +1,30 @@
-# Weight Tracker App
+# Weight Tracking App
 
-An application that displays the users weight and BMI, and keeps track of how close the user is to reaching their goal weight.
+An application built with React, JavaScript, SCSS, and CSS, where after a user registers/logs in, the data that they have input is saved to a database and the app is able to track how close the user is to reaching their goals and displays the users weight and BMI. 
 
-It is built with React, Javascript, SCSS, and CSS.
+The app contains a [history](#history-page) page that displays the users previous weight inputs, as well as the date in which the weight was updated, and how much progress was made at the time.
 
-## Screenshots
+The [profile](#profile-page) page allows the user to edit the information that is saved to their profile.
 
-![Tracker Application Screenshot](https://user-images.githubusercontent.com/97766663/210654990-a54d845f-b35b-4119-97b4-a9ef1fc203dc.png)
+[Firebase](https://firebase.google.com/) is used as the database to store the users and the user properties.
 
-![Form Screenshot](https://user-images.githubusercontent.com/97766663/210655025-81649bab-8e0f-4cee-ae3d-c6b0fa45e15a.png)
+# Screenshots
+
+# Home Page
+
+![Home Page](https://github.com/noahlarsen26/weight-tracker/assets/97766663/7d5d9f2c-b528-4d9a-811c-3227197a02e9)
+
+# History Page
+
+![History Page](https://github.com/noahlarsen26/weight-tracker/assets/97766663/758a7294-928d-455c-89cc-3f363450c245)
+
+# Profile Page
+
+![Profile Page](https://github.com/noahlarsen26/weight-tracker/assets/97766663/fcd9f5ee-d48c-45d3-a5dc-273244005327)
+
+# Login Page
+
+![Login Page](https://github.com/noahlarsen26/weight-tracker/assets/97766663/4b163e7d-5282-44ad-b822-1fb07a54e095)
 
 ## Installation and Setup Instructions
 

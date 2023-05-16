@@ -38,7 +38,7 @@ function Profile({ profileInputs, weightInputs }) {
       </header>
       <section className="input-form">
         <div className="input-form-container">
-          <div className="profile-details-container placeholderClass">
+          <div className="profile-details-container profile-form">
             <h3>profile details</h3>
             <Form
               onSubmit={handleAdd}
@@ -46,7 +46,7 @@ function Profile({ profileInputs, weightInputs }) {
               inputs={profileInputs}
             />
           </div>
-          <div className="weight-objective-container placeholderClass">
+          <div className="weight-objective-container profile-form">
             <h3>weight objectives</h3>
             <Form
               onSubmit={handleAdd}

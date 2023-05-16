@@ -52,82 +52,82 @@ body {
     row-gap: 2.5rem;
   }
 }
-.input-form-container .placeholderClass {
+.input-form-container .profile-form {
   margin-top: 3rem;
   height: 70%;
   width: 25rem;
 }
 @media (max-width: 920px) {
-  .input-form-container .placeholderClass {
+  .input-form-container .profile-form {
     width: 20rem;
   }
 }
 @media (max-width: 760px) {
-  .input-form-container .placeholderClass {
+  .input-form-container .profile-form {
     height: 40%;
     margin: 0;
     width: 70%;
   }
 }
 @media (max-width: 470px) {
-  .input-form-container .placeholderClass {
+  .input-form-container .profile-form {
     width: 90%;
   }
 }
-.input-form-container .placeholderClass h3 {
+.input-form-container .profile-form h3 {
   text-transform: capitalize;
   margin: 0 auto;
   color: gray;
   padding-bottom: 0.5rem;
 }
 @media (max-width: 760px) {
-  .input-form-container .placeholderClass h3 {
+  .input-form-container .profile-form h3 {
     width: 90%;
     font-size: 1rem;
     padding-top: 0.5rem;
   }
 }
-.input-form-container .placeholderClass .form {
+.input-form-container .profile-form .form {
   width: 100%;
   height: 100%;
   margin: 0 auto;
   font-size: 1.25rem;
 }
 @media (max-width: 760px) {
-  .input-form-container .placeholderClass .form {
+  .input-form-container .profile-form .form {
     padding-top: 0.5rem;
   }
 }
-.input-form-container .placeholderClass .form .form-container {
+.input-form-container .profile-form .form .form-container {
   height: 100%;
   width: 90%;
   margin: 0 auto;
 }
-.input-form-container .placeholderClass .form .form-container .input-container {
+.input-form-container .profile-form .form .form-container .input-container {
   height: 100%;
   display: flex;
   flex-direction: column;
   text-transform: capitalize;
 }
-.input-form-container .placeholderClass .form .form-container .input-container div {
+.input-form-container .profile-form .form .form-container .input-container div {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
 }
-.input-form-container .placeholderClass .form .form-container .input-container div label {
+.input-form-container .profile-form .form .form-container .input-container div label {
   padding-top: 0.75rem;
   font-weight: bold;
   font-size: 1.25rem;
 }
 @media (max-width: 760px) {
-  .input-form-container .placeholderClass .form .form-container .input-container div label {
+  .input-form-container .profile-form .form .form-container .input-container div label {
     font-size: 1rem;
     padding: 0;
     height: 1rem;
   }
 }
-.input-form-container .placeholderClass .form .form-container .input-container div input {
+.input-form-container .profile-form .form .form-container .input-container div input {
   height: 2.75rem;
   display: block;
   background: none;
@@ -142,18 +142,18 @@ body {
   margin-bottom: 0.75rem;
 }
 @media (max-width: 760px) {
-  .input-form-container .placeholderClass .form .form-container .input-container div input {
+  .input-form-container .profile-form .form .form-container .input-container div input {
     margin-bottom: 0.25rem;
     font-size: 0.75rem;
     height: 1rem;
   }
 }
-.input-form-container .placeholderClass .form .form-container .input-container div input[type=date]::-webkit-calendar-picker-indicator {
+.input-form-container .profile-form .form .form-container .input-container div input[type=date]::-webkit-calendar-picker-indicator {
   cursor: pointer;
   filter: invert(1);
   font-size: 1rem;
 }
-.input-form-container .placeholderClass .form .form-container .input-container .btn {
+.input-form-container .profile-form .form .form-container .input-container .btn {
   text-transform: capitalize;
   font-size: 1.25rem;
   font-weight: bold;
@@ -163,12 +163,12 @@ body {
   padding-block: 0.25rem;
 }
 @media (max-width: 760px) {
-  .input-form-container .placeholderClass .form .form-container .input-container .btn {
+  .input-form-container .profile-form .form .form-container .input-container .btn {
     padding: 0;
     font-size: 1rem;
   }
 }
-.input-form-container .placeholderClass .form .form-container .input-container .btn:hover {
+.input-form-container .profile-form .form .form-container .input-container .btn:hover {
   background: bisque;
 }
 

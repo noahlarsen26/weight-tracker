@@ -1,22 +1,13 @@
-$dark-bg: linear-gradient(to top, rgb(74, 71, 71), rgba(0, 0, 0, 1));
-$background1: linear-gradient(rgb(19, 21, 21), rgba(0, 0, 0, 0.7));
-$background2: #292929;
-$background3: linear-gradient(
-  135deg,
-  rgba(255, 255, 255, 0.1),
-  rgba(255, 255, 255, 0)
-);
-$background4: linear-gradient(135deg, rgb(74, 117, 155));
-$formbg: rgb(18, 18, 18);
-$form-hover: #53628d;
-$progress: blue;
-$gray-border: solid 1px gray;
-
-$dark-color: rgb(19, 21, 21);
 $light-color: #f4f4f4;
-$slider-color: #d4b20b;
-$slider-gradient: linear-gradient(#d4b20b, #d4b20b);
+$dark-color: rgb(19, 21, 21);
+$dark-bg: linear-gradient(to top, rgb(74, 71, 71), rgba(0, 0, 0, 1));
 $primary-blue: #0000ff;
+$light-blue: rgb(0, 150, 255);
+$primary-yellow: #ffff00;
+$slider-color: #d4b20b;
+$slider-gradient: linear-gradient($slider-color, $slider-color);
+$primary-gray: #808080;
+$gray-border: solid 1px gray;
 
 // set text color based on bg
 

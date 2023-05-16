@@ -14,7 +14,7 @@
       border: solid 1px transparent;
     }
     .first-name {
-      color: gray;
+      color: $primary-gray;
       font-size: $small-font;
       width: 90%;
       margin: 0 auto;
@@ -69,7 +69,7 @@
           }
           .progress {
             height: inherit;
-            background-color: $progress;
+            background-color: $primary-blue;
           }
         }
       }

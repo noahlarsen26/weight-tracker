@@ -11,7 +11,7 @@ aside {
   z-index: 40;
   text-transform: capitalize;
   background: #27292b;
-  color: white;
+  color: set-text-color(white);
   .close-btn {
     height: 3rem;
     font-size: 2rem;

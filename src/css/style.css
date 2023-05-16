@@ -230,7 +230,7 @@ aside {
   z-index: 40;
   text-transform: capitalize;
   background: #27292b;
-  color: white;
+  color: rgb(19, 21, 21);
 }
 aside .close-btn {
   height: 3rem;
@@ -280,7 +280,7 @@ aside nav .side-nav li a {
   border: solid 1px transparent;
 }
 .history header .first-name {
-  color: gray;
+  color: #808080;
   font-size: 0.75rem;
   width: 90%;
   margin: 0 auto;
@@ -349,7 +349,7 @@ aside nav .side-nav li a {
 }
 .history .history-container .input-history .progress-bar-container .progress-bar .progress {
   height: inherit;
-  background-color: blue;
+  background-color: #0000ff;
 }
 
 .container {
@@ -442,11 +442,11 @@ aside nav .side-nav li a {
 }
 .container .tracker .progress-container .progress-bar .progress {
   height: inherit;
-  background-color: blue;
+  background-color: #0000ff;
 }
 .container .tracker .current-stats {
   text-transform: capitalize;
-  color: yellow;
+  color: #ffff00;
   text-align: center;
   border-top: solid 1px gray;
   font-size: 0.75rem;
@@ -558,7 +558,7 @@ aside nav .side-nav li a {
   height: 50%;
   width: 50%;
   margin: 0 auto;
-  background: rgb(18, 18, 18);
+  background: rgb(19, 21, 21);
   border-radius: 30px;
   position: relative;
 }
@@ -596,7 +596,7 @@ aside nav .side-nav li a {
   width: 100%;
   height: 2rem;
   border-radius: 5px;
-  background: gray;
+  background: #808080;
 }
 .login-page .login-container div:nth-of-type(2), .login-page .register-container div:nth-of-type(2) {
   height: 7rem;
@@ -615,7 +615,7 @@ aside nav .side-nav li a {
   text-transform: capitalize;
   height: 2rem;
   width: 95%;
-  background: blue;
+  background: #0000ff;
   color: #f4f4f4;
   border: none;
   border-radius: 5px;

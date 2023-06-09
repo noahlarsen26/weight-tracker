@@ -18,11 +18,14 @@ function App() {
 
   const [sidebar, setSidebar] = useState(false);
   const [user, setUser] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     async function getUserData() {
+      setIsLoading(true);
       const snap = await getDoc(doc(db, "users", currentUser.uid));
       setUser({ ...snap.data() });
+      setIsLoading(false);
     }
     getUserData();
   }, []);
@@ -47,7 +50,7 @@ function App() {
             path="/"
             element={
               <RequireAuth>
-                <CurrentData user={user} />
+                <CurrentData loading={isLoading} user={user} />
               </RequireAuth>
             }
           />

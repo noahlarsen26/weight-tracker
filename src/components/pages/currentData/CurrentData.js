@@ -12,7 +12,7 @@ import {
 } from "firebase/firestore";
 import { db } from "../../../firebase";
 
-function CurrentData({ user }) {
+function CurrentData({ loading, user }) {
   const [weightForm, setWeightForm] = useState(false);
 
   const { currentUser } = useContext(AuthContext);
@@ -40,6 +40,10 @@ function CurrentData({ user }) {
   }
   function getBackgroundSize() {
     return { backgroundSize: `${(value * 100) / 150}% 100%` };
+  }
+
+  if (loading) {
+    return <div className="loading"></div>;
   }
   return (
     <>

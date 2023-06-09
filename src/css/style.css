@@ -739,6 +739,7 @@ aside nav .side-nav li a {
   width: 100%;
 }
 .slider-container .input-container input[type=range] {
+  width: 100%;
   appearance: none;
   height: 2em;
   border-radius: 5px;

@@ -22,6 +22,13 @@
   }
   .history-container {
     min-height: calc(100% - 6.25rem);
+    list-style-type: none;
+    padding: 0;
+    .no-data {
+      font-size: $big-font;
+      text-align: center;
+      margin-top: 3rem;
+    }
     .input-history {
       border-bottom: $gray-border;
       height: inherit;

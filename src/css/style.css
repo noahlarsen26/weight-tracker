@@ -27,14 +27,15 @@ body {
   width: 100%;
 }
 .form-heading h2 {
-  height: 50%;
+  height: 100%;
   text-align: center;
   text-transform: capitalize;
+  margin: 0;
 }
 
 .input-form {
   width: 100vw;
-  height: calc(100vh - 9rem);
+  height: calc(100vh - 11rem);
 }
 .input-form-container {
   display: flex;
@@ -49,7 +50,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    row-gap: 2.5rem;
+    row-gap: 1.75rem;
   }
 }
 .input-form-container .profile-form {
@@ -66,12 +67,6 @@ body {
   .input-form-container .profile-form {
     height: 40%;
     margin: 0;
-    width: 70%;
-  }
-}
-@media (max-width: 470px) {
-  .input-form-container .profile-form {
-    width: 90%;
   }
 }
 .input-form-container .profile-form h3 {
@@ -93,11 +88,6 @@ body {
   margin: 0 auto;
   font-size: 1.25rem;
 }
-@media (max-width: 760px) {
-  .input-form-container .profile-form .form {
-    padding-top: 0.5rem;
-  }
-}
 .input-form-container .profile-form .form .form-container {
   height: 100%;
   width: 90%;
@@ -110,15 +100,12 @@ body {
   text-transform: capitalize;
 }
 .input-form-container .profile-form .form .form-container .input-container div {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   height: 100%;
 }
 .input-form-container .profile-form .form .form-container .input-container div label {
   padding-top: 0.75rem;
   font-weight: bold;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
 }
 @media (max-width: 760px) {
   .input-form-container .profile-form .form .form-container .input-container div label {
@@ -128,7 +115,7 @@ body {
   }
 }
 .input-form-container .profile-form .form .form-container .input-container div input {
-  height: 2.75rem;
+  height: 1.5rem;
   display: block;
   background: none;
   color: #f4f4f4;
@@ -139,12 +126,12 @@ body {
   border-right: none;
   width: 100%;
   font-size: 1rem;
-  margin-bottom: 0.75rem;
+  margin-top: 0.5rem;
 }
 @media (max-width: 760px) {
   .input-form-container .profile-form .form .form-container .input-container div input {
-    margin-bottom: 0.25rem;
     font-size: 0.75rem;
+    margin: 0;
     height: 1rem;
   }
 }
@@ -287,6 +274,13 @@ aside nav .side-nav li a {
 }
 .history .history-container {
   min-height: calc(100% - 6.25rem);
+  list-style-type: none;
+  padding: 0;
+}
+.history .history-container .no-data {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 3rem;
 }
 .history .history-container .input-history {
   border-bottom: solid 1px gray;

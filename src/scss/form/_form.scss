@@ -5,43 +5,49 @@
   height: 3rem;
   text-transform: capitalize;
   width: 100%;
+  // border: solid 1px blue;
 
   h2 {
-    height: 50%;
+    height: 100%;
     text-align: center;
     text-transform: capitalize;
+    // border: solid 1px red;
+    margin: 0;
   }
 }
 .input-form {
   width: 100vw;
-  height: calc(100vh - 9rem);
+  height: calc(100vh - 11rem);
+  // border: solid 1px red;
   &-container {
     display: flex;
     justify-content: space-around;
     width: 90%;
     margin: 0 auto;
     height: 100%;
+    // border: solid 1px red;
     @include respond-to("bigger") {
       width: 90%;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      row-gap: 2.5rem;
+      row-gap: 1.75rem;
     }
     .profile-form {
       margin-top: 3rem;
       height: 70%;
       width: 25rem;
+      // border: solid 1px red;
       @include respond-to("biggest") {
         width: 20rem;
       }
       @include respond-to("bigger") {
         height: 40%;
         margin: 0;
-        width: 70%;
+        // width: 70%;
       }
       @include respond-to("medium") {
-        width: 90%;
+        // width: 90%;
       }
       h3 {
         text-transform: capitalize;
@@ -60,28 +66,30 @@
         margin: 0 auto;
         font-size: $med-font;
         @include respond-to("bigger") {
-          padding-top: 0.5rem;
+          // padding-top: 0.5rem;
         }
         .form-container {
           height: 100%;
           width: 90%;
           margin: 0 auto;
           .input-container {
+            // border: solid 1px red;
             height: 100%;
             display: flex;
             flex-direction: column;
             text-transform: capitalize;
 
             div {
-              display: flex;
-              flex-direction: column;
-              justify-content: space-between;
+              // display: flex;
+              // flex-direction: column;
+              // justify-content: space-between;
               height: 100%;
-
+              // border: solid 1px red;
               label {
                 padding-top: 0.75rem;
                 font-weight: bold;
-                font-size: $med-font;
+                font-size: 1.15rem;
+                // border: solid 1px green;
                 @include respond-to("bigger") {
                   font-size: $primary-font;
                   padding: 0;
@@ -89,21 +97,25 @@
                 }
               }
               input {
-                height: 2.75rem;
+                height: 1.5rem;
                 display: block;
                 background: none;
                 color: $light-color;
                 letter-spacing: 1.5px;
+
+                // border: solid 1px blue;
                 border-bottom: solid 2px $primary-gray;
                 border-top: none;
                 border-left: none;
                 border-right: none;
                 width: 100%;
                 font-size: $primary-font;
-                margin-bottom: 0.75rem;
+                // margin-bottom: 0.75rem;
+                margin-top: 0.5rem;
                 @include respond-to("bigger") {
-                  margin-bottom: 0.25rem;
+                  // margin-bottom: 0.25rem;
                   font-size: $small-font;
+                  margin: 0;
                   height: 1rem;
                 }
               }

@@ -29,6 +29,7 @@ function History({ user }) {
     }
     fetchData();
   }, []);
+  console.log(data);
   return (
     <section className="history">
       <header>
@@ -40,15 +41,19 @@ function History({ user }) {
         </div>
       </header>
       <ul className="history-container">
-        {data.map((history) => (
-          <HistoryRow
-            currentWeight={history.currentWeight}
-            timestamp={history.timestamp}
-            id={history.id}
-            difference={history.difference}
-            goalWeight={goalWeight}
-          />
-        ))}
+        {data === [] ? (
+          data.map((history) => (
+            <HistoryRow
+              currentWeight={history.currentWeight}
+              timestamp={history.timestamp}
+              id={history.id}
+              difference={history.difference}
+              goalWeight={goalWeight}
+            />
+          ))
+        ) : (
+          <li className="no-data">No History</li>
+        )}
       </ul>
     </section>
   );

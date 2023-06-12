@@ -29,7 +29,6 @@ function History({ user }) {
     }
     fetchData();
   }, []);
-  console.log(data);
   return (
     <section className="history">
       <header>

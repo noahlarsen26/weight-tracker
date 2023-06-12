@@ -1,4 +1,13 @@
-function FormInput({ label, children, value, onChange, type, name, id }) {
+function FormInput({
+  label,
+  children,
+  value,
+  onChange,
+  type,
+  name,
+  id,
+  placeholder,
+}) {
   return (
     <div>
       <label label={label}>{children}</label>
@@ -9,6 +18,7 @@ function FormInput({ label, children, value, onChange, type, name, id }) {
         type={type}
         name={name}
         id={id}
+        placeholder={placeholder}
       />
     </div>
   );

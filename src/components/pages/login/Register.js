@@ -67,6 +67,7 @@ function Register({ profileInputs, weightInputs }) {
                   type={input.type}
                   id={input.id}
                   key={input.id}
+                  placeholder={input.placeholder}
                 >
                   {input.label}
                 </FormInput>
@@ -89,6 +90,7 @@ function Register({ profileInputs, weightInputs }) {
                   type={input.type}
                   id={input.id}
                   key={input.id}
+                  placeholder={input.placeholder}
                 >
                   {input.label}
                 </FormInput>

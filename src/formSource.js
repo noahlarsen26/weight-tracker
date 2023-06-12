@@ -21,7 +21,8 @@ export const profileInputs = [
     htmlFor: "height",
     type: "text",
     id: "height",
-    label: "height (cm):",
+    label: "height:",
+    placeholder: "(cm)",
   },
 ];
 export const weightInputs = [
@@ -29,7 +30,8 @@ export const weightInputs = [
     htmlFor: "startWeight",
     type: "number",
     id: "startWeight",
-    label: "starting weight (kgs):",
+    label: "starting weight:",
+    placeholder: "(kgs)",
   },
   {
     htmlFor: "startDate",
@@ -42,6 +44,7 @@ export const weightInputs = [
     type: "number",
     id: "currentWeight",
     label: "current weight:",
+    placeholder: "(kgs)",
   },
   {
     htmlFor: "goalDate",
@@ -53,6 +56,7 @@ export const weightInputs = [
     htmlFor: "goalWeight",
     type: "number",
     id: "goalWeight",
-    label: "goal weight (kgs):",
+    label: "goal weight:",
+    placeholder: "(kgs)",
   },
 ];

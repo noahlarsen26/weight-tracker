@@ -620,7 +620,7 @@ aside nav .side-nav li a {
   margin-top: 1rem;
 }
 .login-page .register {
-  height: 65%;
+  height: 75%;
 }
 @media (max-width: 920px) {
   .login-page .register {
@@ -630,6 +630,9 @@ aside nav .side-nav li a {
 .login-page .register-container .inputs {
   display: flex;
   height: calc(100% - 2rem);
+}
+.login-page .register-container .inputs ::placeholder {
+  color: rgb(19, 21, 21);
 }
 .login-page .register-container .inputs .register-inputs {
   display: flex;

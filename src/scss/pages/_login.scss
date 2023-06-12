@@ -87,7 +87,7 @@
   }
   .register {
     @extend .login;
-    height: 65%;
+    height: 75%;
     @include respond-to("biggest") {
       font-size: $small-font;
     }
@@ -96,6 +96,9 @@
       .inputs {
         display: flex;
         height: calc(100% - 2rem);
+        ::placeholder {
+          color: $dark-color;
+        }
         .register-inputs {
           display: flex;
           flex-direction: column;
